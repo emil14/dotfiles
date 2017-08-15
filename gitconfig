@@ -1,0 +1,12 @@
+[user]
+	email = emil.musician@gmail.com
+	name = Emil Valeev
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[core]
+	editor = code --wait --disable-extensions
