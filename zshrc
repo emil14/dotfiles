@@ -84,3 +84,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 alias zshconfig="atom ~/.zshrc"
 alias ohmyzsh="atom ~/.oh-my-zsh"
+
+# hello message on terminal open
+GREEN='\033[0;32m'
+
+echo -e "${GREEN}+---------------------------------------+"
+echo -e "${GREEN}| where there is a shell there's a way. |"
+echo -e "${GREEN}+---------------------------------------+"
