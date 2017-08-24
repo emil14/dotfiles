@@ -26,8 +26,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Terminus:style=Regular:pixelsize=16
-URxvt*boldFont:             xft:Terminus:style=Bold:pixelsize=16
+URxvt*font:                 xft:Terminus:size=12
+URxvt*boldFont:             xft:Terminus:bold:size=12
 
 ! Fix font space
 yURxvt*letterSpace:         -1
