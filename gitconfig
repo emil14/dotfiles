@@ -9,4 +9,4 @@
 	ci = commit
 	st = status
 [core]
-	editor = code --wait --disable-extensions
+	editor = vim
