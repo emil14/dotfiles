@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dependencies=(rxvt-unicode)
+dependencies=(zsh rxvt-unicode git i3 nodejs)
 
 sudo apt-get update
 sudo apt-get upgrade
