@@ -6,6 +6,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.xinitrc: xinitrc
     ~/.Xresources: Xresources
     ~/.gitconfig: gitconfig
     ~/.i3: i3
