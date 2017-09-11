@@ -8,5 +8,5 @@
 . /etc/X11/Xsession
 
 # setup monitors with xrandr
-xrandr --output HDMI-1 --pos 0x0
-xrandr --output eDP-1 --pos 277x1080
+exec xrandr --output HDMI-1 --pos 0x0
+exec xrandr --output eDP-1 --pos 277x1080
