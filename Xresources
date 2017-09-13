@@ -32,8 +32,10 @@ URxvt*boldFont:             xft:Terminus:bold:size=12
 ! Fix font space
 yURxvt*letterSpace:         -1
 
-! Scrollbar
+! Scroll
 URxvt.scrollBar:            false
+URxvt.keysym.Shift-Up:      command:\033]720;1\007
+URxvt.keysym.Shift-Down:    command:\033]721;1\007
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,keyboard-select,font-size
