@@ -169,4 +169,4 @@ exec --no-startup-id "nm-applet --sm-disable"
 bindsym $mod+Escape exec "i3lock -fc 000000"
 
 # screen
-exec_always bash 'xrandr --output HDMI-1 --pos 0x0 --output eDP-1 --pos 277x1080'
+exec "xrandr --output HDMI-1 --pos 0x0 --output eDP-1 --pos 277x1080"
