@@ -103,4 +103,4 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-set ruler
+set number
