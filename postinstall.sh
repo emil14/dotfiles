@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dependencies=(zsh rxvt-unicode git i3 nodejs)
+dependencies=(zsh rxvt-unicode git i3 nodejs ranger)
 
 sudo apt-get update
 sudo apt-get upgrade
