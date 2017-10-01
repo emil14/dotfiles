@@ -6,14 +6,15 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.xinitrc: xinitrc
     ~/.Xresources: Xresources
     ~/.gitconfig: gitconfig
     ~/.i3: i3
-    ~/.nanorc: nanorc
-    ~/.npmrc: npmrc
     ~/.profile: profile
     ~/.zshrc: zshrc
-
+    ~/.config/ranger/rc.conf: ranger
+    ~/.config/termite/config: 
+      create: true
+      path: termite
+    
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
