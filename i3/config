@@ -170,3 +170,6 @@ bindsym $mod+Escape exec "i3lock -fc 000000"
 
 # screen
 exec "xrandr --output HDMI-1 --pos 0x0 --output eDP-1 --pos 277x1080"
+
+# background
+exec "feh --bg-scale ~/Pictures/wallpaper.png"
