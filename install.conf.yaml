@@ -10,7 +10,6 @@
     ~/.i3/config:
       create: true
       path: i3
-    ~/.profile: profile
     ~/.zshrc: zshrc
     ~/.config/ranger/rc.conf: ranger
     ~/.config/termite/config: 
