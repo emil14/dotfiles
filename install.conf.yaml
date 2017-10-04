@@ -6,7 +6,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.Xresources: Xresources
     ~/.gitconfig: gitconfig
     ~/.i3/config:
       create: true
