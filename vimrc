@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'liuchengxu/space-vim-dark'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 filetype plugin indent on    
@@ -134,6 +135,7 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-colorscheme space-vim-dark
-hi Comment cterm=italic
+" colorscheme space-vim-dark
+syntax on
+colorscheme onedark
 
