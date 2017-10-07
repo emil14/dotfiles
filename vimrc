@@ -7,8 +7,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
-Plugin 'liuchengxu/space-vim-dark'
+Plugin 'junegunn/fzf.vim'
 Plugin 'joshdick/onedark.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on    
@@ -139,3 +142,11 @@ endif
 syntax on
 colorscheme onedark
 
+" vim-javascript
+let g:javascript_plugin_flow = 1
+
+" ale
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
