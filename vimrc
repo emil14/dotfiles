@@ -45,6 +45,9 @@ set ruler
 set history=50
 set hidden
 set colorcolumn=80
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " Searching
 set incsearch
@@ -79,6 +82,7 @@ set writebackup
 " NERDTree
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeMapActivateNode='<right>'
 let NERDTreeShowHidden=1
 nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
