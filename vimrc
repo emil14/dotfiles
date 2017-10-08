@@ -19,6 +19,7 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 " Colors
+let g:onedark_termcolors=16
 colorscheme onedark
 syntax enable
 
@@ -89,7 +90,7 @@ let g:NERDTreeDirArrowCollapsible = '-'
 " lightline
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'onedark'
       \ }
 if !has('gui_running')
   set t_Co=256
