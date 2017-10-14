@@ -45,7 +45,7 @@ set ruler
 set history=50
 set hidden
 set colorcolumn=80
-let &t_SI = "\<Esc>[6 q"
+let &t_SI = "\<Esc>[0 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
@@ -102,6 +102,9 @@ endif
 
 " vim-javascript
 let g:javascript_plugin_flow = 1
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 " ale
 let g:ale_fixers = {
