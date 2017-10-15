@@ -29,3 +29,6 @@ rm -rf ./termite-install ./vte-ng
 
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
