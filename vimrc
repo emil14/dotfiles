@@ -55,22 +55,26 @@ set fillchars+=vert:│
 set conceallevel=1
 
 let &t_SI = "\<Esc>[5 q"
+let &t_SR = "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[3 q"
-let g:indentLine_conceallevel=1
 
 function! SetUnderlineCursorLine()
         hi clear CursorLine
+        hi clear CursorColumn
         hi CursorLine cterm=underline
 endfunction
 
 function! SetDefaultCursorLine()
         hi clear CursorLine
         hi CursorLine cterm=NONE
-        hi CursorLine ctermbg=cyan
+        hi Cursorcolumn ctermbg=8
+        hi CursorLine ctermbg=8
 endfunction
 
 autocmd InsertEnter * call SetUnderlineCursorLine()
 autocmd InsertLeave * call SetDefaultCursorLine()
+
+autocmd VimLeave * t_SR = "\<Esc>[5 q"
 
 augroup CursorLineOnlyInActiveWindow
   autocmd!
@@ -149,6 +153,5 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " indentLine
-" let g:indentLine_setColors = 0
-" let g:indentLine_conceallevel = 0
+let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 0
