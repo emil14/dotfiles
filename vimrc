@@ -28,7 +28,7 @@ call vundle#end()
 let g:onedark_termcolors=16
 colorscheme onedark
 set background=dark
-syntax enable
+syntax manual
 
 " Spaces & Tabs
 set nowrap
@@ -79,17 +79,29 @@ autocmd InsertEnter * call GoToInsertMode()
 autocmd InsertLeave * call GoToNormalMode()
 autocmd VimLeave * let &t_SR = "\<Esc>[2 q"
 
+set updatetime=300
+au! CursorMoved * set nohlsearch
+au! CursorHold * set hlsearch | let @/='\<'.expand("<cword>").'\>'
+set hlsearch
+
+set listchars=space:·
+set list
+highlight WhiteSpaceBol ctermfg=NONE
+highlight WhiteSpaceMol ctermfg=NONE
+match WhiteSpaceMol / /
+2match WhiteSpaceBol /^ \+/
+
 augroup CursorLineOnlyInActiveWindow
   autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
-  autocmd WinLeave * setlocal nocursorline nocursorcolumn
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal syntax=ON
+  autocmd WinLeave * setlocal syntax=OFF
 augroup END
 
 " Searching
 set incsearch
 set hlsearch
 hi clear Search
-hi Search ctermfg=NONE ctermbg=NONE cterm=underline
+hi Search ctermfg=NONE ctermbg=8
 
 " Movement
 inoremap <C-c> <esc>
@@ -134,8 +146,6 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-
 " lightline
 set laststatus=2
 let g:lightline = {
@@ -160,13 +170,3 @@ let g:ale_fix_on_save = 1
 " indentLine
 let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 0
-
-
-" leading spaces
-set listchars=space:·
-set list
-highlight WhiteSpaceBol ctermfg=8
-highlight WhiteSpaceMol ctermfg=black
-match WhiteSpaceMol / /
-2match WhiteSpaceBol /^ \+/
-
