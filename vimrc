@@ -1,8 +1,11 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " Vundle
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -16,14 +19,15 @@ Plugin 'w0rp/ale'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
+Plugin 'gioele/vim-autoswap'
 Plugin 'Yggdroot/indentLine'
-Plugin 'lornix/vim-scrollbar'
 
 call vundle#end()
 
 " Colors
 let g:onedark_termcolors=16
 colorscheme onedark
+set background=dark
 syntax enable
 
 " Spaces & Tabs
@@ -58,23 +62,22 @@ let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[3 q"
 
-function! SetUnderlineCursorLine()
-        hi clear CursorLine
-        hi clear CursorColumn
-        hi CursorLine cterm=underline
-endfunction
-
-function! SetDefaultCursorLine()
+function! GoToNormalMode()
         hi clear CursorLine
         hi CursorLine cterm=NONE
         hi Cursorcolumn ctermbg=8
         hi CursorLine ctermbg=8
 endfunction
 
-autocmd InsertEnter * call SetUnderlineCursorLine()
-autocmd InsertLeave * call SetDefaultCursorLine()
+function! GoToInsertMode()
+        hi clear CursorLine
+        hi clear CursorColumn
+        hi CursorLine cterm=underline
+endfunction
 
-autocmd VimLeave * t_SR = "\<Esc>[5 q"
+autocmd InsertEnter * call GoToInsertMode()
+autocmd InsertLeave * call GoToNormalMode()
+autocmd VimLeave * let &t_SR = "\<Esc>[2 q"
 
 augroup CursorLineOnlyInActiveWindow
   autocmd!
@@ -86,11 +89,12 @@ augroup END
 set incsearch
 set hlsearch
 hi clear Search
-hi Search cterm=underline
-
-nnoremap <leader><space> :nohlsearch<CR>
+hi Search ctermfg=NONE ctermbg=NONE cterm=underline
 
 " Movement
+inoremap <C-c> <esc>
+nnoremap <C-c> :nohlsearch<CR>
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -102,7 +106,6 @@ nnoremap gV `[v`]
 " Leader Shortcuts
 let mapleader=","
 inoremap jk <esc>
-inoremap <C-c> <esc>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>s :mksession<CR>
 nnoremap <leader>a :Ag
@@ -131,6 +134,8 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
 " lightline
 set laststatus=2
 let g:lightline = {
@@ -155,3 +160,13 @@ let g:ale_fix_on_save = 1
 " indentLine
 let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 0
+
+
+" leading spaces
+set listchars=space:·
+set list
+highlight WhiteSpaceBol ctermfg=8
+highlight WhiteSpaceMol ctermfg=black
+match WhiteSpaceMol / /
+2match WhiteSpaceBol /^ \+/
+
