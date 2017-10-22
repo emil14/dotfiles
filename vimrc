@@ -54,7 +54,8 @@ set backspace=indent,eol,start
 set ruler
 set history=50
 set hidden
-set colorcolumn=80,120
+set textwidth=80
+set colorcolumn=+1,+41
 set fillchars+=vert:│
 set conceallevel=1
 
