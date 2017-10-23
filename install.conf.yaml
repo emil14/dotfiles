@@ -5,6 +5,8 @@
 - clean: ['~']
 
 - link:
+    ~/.vimrc: vimrc
+    ~/.config/nvim/init.vim: vimrc
     ~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     ~/.i3/config:
@@ -12,9 +14,9 @@
       path: i3
     ~/.zshrc: zshrc
     ~/.config/ranger/rc.conf: ranger
-    ~/.config/termite/config: 
+    ~/.config/termite/config:
       create: true
       path: termite
-    
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

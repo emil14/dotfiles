@@ -3,8 +3,8 @@ set encoding=utf-8
 
 " Vundle
 set nocompatible
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
 
 call vundle#begin()
 
@@ -34,6 +34,7 @@ syntax manual
 set nowrap
 set tabstop=2
 set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
@@ -59,6 +60,8 @@ set colorcolumn=+1,+41
 set fillchars+=vert:│
 set conceallevel=1
 
+hi! EndOfBuffer ctermbg=bg ctermfg=bg
+
 let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[3 q"
@@ -78,19 +81,21 @@ endfunction
 
 autocmd InsertEnter * call GoToInsertMode()
 autocmd InsertLeave * call GoToNormalMode()
-autocmd VimLeave * let &t_SR = "\<Esc>[2 q"
+" autocmd VimLeave * let &t_SR = "\<Esc>[2 q"
 
+" highlight matches
 set updatetime=300
 au! CursorMoved * set nohlsearch
 au! CursorHold * set hlsearch | let @/='\<'.expand("<cword>").'\>'
 set hlsearch
 
-set listchars=space:·
-set list
-highlight WhiteSpaceBol ctermfg=NONE
-highlight WhiteSpaceMol ctermfg=NONE
-match WhiteSpaceMol / /
-2match WhiteSpaceBol /^ \+/
+" leading spaces
+"set listchars=space:·
+"set list
+"highlight WhiteSpaceBol ctermfg=NONE
+"highlight WhiteSpaceMol ctermfg=NONE
+"match WhiteSpaceMol / /
+"2match WhiteSpaceBol /^ \+/
 
 augroup CursorLineOnlyInActiveWindow
   autocmd!
@@ -134,15 +139,12 @@ set writebackup
 
 " NERDTree
 autocmd vimenter * NERDTree
-
 let NERDTreeMapActivateNode='<right>'
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>j :NERDTreeFind<CR>
-
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -171,3 +173,9 @@ let g:ale_fix_on_save = 1
 " indentLine
 let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 0
+let g:indentLine_leadingSpaceEnabled=1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_faster=1
+let g:indentLine_concealcursor=''
+set concealcursor=ic
+let g:indentLine_char = '⎸'
