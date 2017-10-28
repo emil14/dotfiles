@@ -21,6 +21,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'gioele/vim-autoswap'
 Plugin 'Yggdroot/indentLine'
+Plugin 'Shougo/deoplete.nvim'
 
 call vundle#end()
 
