@@ -15,6 +15,11 @@ sudo apt-get -y -qq install \
 		w3m \
 		poppler-utils mediainfo
 
+# neovim
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
 # vim bundle manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
