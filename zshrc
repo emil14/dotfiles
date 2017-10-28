@@ -16,6 +16,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 # hello message on terminal open
 GREEN='\033[0;32m'
 
