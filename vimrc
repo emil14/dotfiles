@@ -1,88 +1,80 @@
-scriptencoding utf-8
-set encoding=utf-8
+call plug#begin('~/.vim/plugged')
 
-" Vundle
-set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim
-filetype off
+Plug 'tpope/vim-sensible' " universal set of defaults everyone can agree on
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
+Plug 'itchyny/lightline.vim' " statusline
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " cli tool
+Plug 'junegunn/fzf.vim' " fzf commands and mappings
+Plug 'joshdick/onedark.vim' " dark color sheme
+Plug 'sheerun/vim-polyglot' " collection of language packs
+Plug 'w0rp/ale' " asynchronous lint engine
+Plug 'mbbill/undotree' " history visualizer
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plug 'mileszs/ack.vim' " run your favorite search tool from vim
+Plug 'gioele/vim-autoswap' " dealing with swap files
+Plug 'Yggdroot/indentLine' " display the indention levels
+Plug 'blueyed/vim-diminactive' " dim inactive windows
 
-call vundle#begin()
+" deoplete - asynchronous completion framework
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'joshdick/onedark.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'w0rp/ale'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mileszs/ack.vim'
-Plugin 'gioele/vim-autoswap'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Shougo/deoplete.nvim'
+call plug#end()
 
-call vundle#end()
+runtime plugin/sensible.vim " override vim-sensible
 
 " Colors
-let g:onedark_termcolors=16
+let g:onedark_terminal_italics=1
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 colorscheme onedark
-set background=dark
-syntax manual
 
 " Spaces & Tabs
-set nowrap
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-set autoindent
+set wrap " this enables 'visual' wrapping
+set tabstop=2 " number of visual spaces per TAB
+set softtabstop=2 " number of spaces in tab when editing
+set shiftwidth=2 " number of spaces to use for autoindenting
+set expandtab " tabs are spaces
+set smartindent " insert tabs on the start of a line according to shiftwidth, not tabstop
 
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e " automatically removing trailing whitespace
 
 " UI Config
-filetype plugin indent on
-
-set number
-set showcmd
-set cursorline
-set cursorcolumn
-set wildmenu
-set lazyredraw
-set showmatch
-set backspace=indent,eol,start
-set ruler
-set history=50
-set hidden
+set number " show line numbers
+set showcmd " show command in bottom bar
+set cursorline " highlight current line
+set cursorcolumn " highlight current column
+set lazyredraw " redraw only when we need to.
+set showmatch " highlight matching [{()}]
+set hidden " hides buffers instead of closing them
 set textwidth=80
 set colorcolumn=+1,+41
 set fillchars+=vert:│
 set conceallevel=1
 
-hi! EndOfBuffer ctermbg=bg ctermfg=bg
+" hide the sign on blank lines
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[3 q"
 
-function! GoToNormalMode()
-        hi clear CursorLine
-        hi CursorLine cterm=NONE
-        hi Cursorcolumn ctermbg=8
-        hi CursorLine ctermbg=8
-endfunction
-
-function! GoToInsertMode()
-        hi clear CursorLine
-        hi clear CursorColumn
-        hi CursorLine cterm=underline
-endfunction
-
-autocmd InsertEnter * call GoToInsertMode()
-autocmd InsertLeave * call GoToNormalMode()
-" autocmd VimLeave * let &t_SR = "\<Esc>[2 q"
+"autocmd InsertEnter * highlight CursorLine cterm=underline term=underline
+"autocmd InsertLeave * highlight CursorLine cterm=NONE term=NONE
 
 " highlight matches
 set updatetime=300
@@ -90,44 +82,40 @@ au! CursorMoved * set nohlsearch
 au! CursorHold * set hlsearch | let @/='\<'.expand("<cword>").'\>'
 set hlsearch
 
-" leading spaces
-"set listchars=space:·
-"set list
-"highlight WhiteSpaceBol ctermfg=NONE
-"highlight WhiteSpaceMol ctermfg=NONE
-"match WhiteSpaceMol / /
-"2match WhiteSpaceBol /^ \+/
-
-augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal syntax=ON
-  autocmd WinLeave * setlocal syntax=OFF
-augroup END
-
 " Searching
-set incsearch
-set hlsearch
-hi clear Search
-hi Search ctermfg=NONE ctermbg=8
+set ignorecase " ignore case when searching
+set smartcase " ignore case if search pattern is all lowercase
+set hlsearch " highlight search terms
+
+" Folding
+set foldenable " enable folding
+set foldlevelstart=10 " open most folds by default
+set foldnestmax=10 " 10 nested fold max
+nnoremap <space> za " space open/closes folds
+set foldmethod=indent " fold based on indent level
 
 " Movement
 inoremap <C-c> <esc>
-nnoremap <C-c> :nohlsearch<CR>
-
+inoremap jk <esc>
+" disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+" move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+" highlight last inserted text
 nnoremap gV `[v`]
 
 " Leader Shortcuts
-let mapleader=","
-inoremap jk <esc>
-nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader>s :mksession<CR>
-nnoremap <leader>a :Ag
+let mapleader="," " leader is comma
+nnoremap <leader>s :mksession<CR> " save session
+nnoremap <leader>a :Ag " open ag.vim
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Backups
 set backup
@@ -136,7 +124,12 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-"Plugins
+"Plugs
+
+" ack.vim
+if executable('ag') " use ag if available
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " NERDTree
 autocmd vimenter * NERDTree
@@ -151,7 +144,6 @@ autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " lightline
-set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'onedark'
       \ }
@@ -180,3 +172,16 @@ let g:indentLine_faster=1
 let g:indentLine_concealcursor=''
 set concealcursor=ic
 let g:indentLine_char = '⎸'
+
+" undotree
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+nnoremap <F5> :UndotreeToggle<cr>
+
+" vim-autoswap
+set title titlestring= " enable the title option
+
+" vim-diminactive
+let g:diminactive_use_syntax = 1
