@@ -7,6 +7,7 @@ sudo apt-get -y -qq install \
 	zsh \
 	git \
 	i3 \
+  python3-pip \
 	nodejs \
   silversearcher-ag \
 	ranger \
@@ -20,6 +21,10 @@ sudo apt-get -y -qq install \
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage
+
+# enable Python3 interface for deoplete.nvim
+pip3 install neovim
+pip3 install --upgrade neovim
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
