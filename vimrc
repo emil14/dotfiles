@@ -1,3 +1,10 @@
+" Vim-Plug automatic installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible' " universal set of defaults everyone can agree on
@@ -14,6 +21,9 @@ Plug 'mileszs/ack.vim' " run your favorite search tool from vim
 Plug 'gioele/vim-autoswap' " dealing with swap files
 Plug 'Yggdroot/indentLine' " display the indention levels
 Plug 'blueyed/vim-diminactive' " dim inactive windows
+Plug 'SirVer/ultisnips' " snippet engine
+Plug 'honza/vim-snippets' " large collection of snippets
+Plug 'posva/vim-vue', { 'for': ['vue'] } " syntax highlight for vue.js components
 
 " deoplete - asynchronous completion framework
 if has('nvim')
@@ -23,6 +33,11 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+" code-analysis engine for JavaScript
+Plug 'carlitux/deoplete-ternjs', {
+  \ 'do': 'npm install -g tern',
+  \ 'for': ['javascript', 'javascript.jsx', 'vue'] }
 
 call plug#end()
 

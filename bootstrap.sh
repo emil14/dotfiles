@@ -26,15 +26,6 @@ chmod u+x nvim.appimage
 pip3 install neovim
 pip3 install --upgrade neovim
 
-# vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# vim bundle manager
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 # vim plugins and theme
 vim +PluginInstall +qall
 cp -r ~/.vim/bundle/onedark.vim/autoload/lightline/colorscheme/onedark.vim /.vim/autoload/lightline/colorscheme/
