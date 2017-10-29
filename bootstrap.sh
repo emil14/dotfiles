@@ -8,6 +8,7 @@ sudo apt-get -y -qq install \
 	git \
 	i3 \
 	nodejs \
+  silversearcher-ag \
 	ranger \
 		caca-utils \
 		highlight \
@@ -19,6 +20,12 @@ sudo apt-get -y -qq install \
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage
+
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # vim bundle manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
