@@ -185,3 +185,6 @@ set title titlestring= " enable the title option
 
 " vim-diminactive
 let g:diminactive_use_syntax = 1
+
+" deoplete.
+let g:deoplete#enable_at_startup = 1
