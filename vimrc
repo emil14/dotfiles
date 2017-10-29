@@ -37,7 +37,8 @@ endif
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
   \ 'do': 'npm install -g tern',
-  \ 'for': ['javascript', 'javascript.jsx', 'vue'] }
+  \ 'for': ['javascript', 'javascript.jsx', 'vue']
+\}
 
 call plug#end()
 

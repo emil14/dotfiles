@@ -4,18 +4,18 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y -qq install \
-	zsh \
-	git \
-	i3 \
+  zsh \
+  git \
+  i3 \
   python3-pip \
-	nodejs \
+  nodejs \
   silversearcher-ag \
-	ranger \
-		caca-utils \
-		highlight \
-		atool \
-		w3m \
-		poppler-utils mediainfo
+  ranger \
+    caca-utils \
+    highlight \
+    atool \
+    w3m \
+    poppler-utils mediainfo
 
 # neovim
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
