@@ -17,8 +17,11 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
+  alias vi='nvim' # use some muscle memory
 fi
+
+# allows write the last visited directory into targetfile
+alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 
 # hello message on terminal open
 GREEN='\033[0;32m'
