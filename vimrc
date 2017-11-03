@@ -9,6 +9,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible' " universal set of defaults everyone can agree on
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
+Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
+Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
 Plug 'itchyny/lightline.vim' " statusline
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " cli tool
 Plug 'junegunn/fzf.vim' " fzf commands and mappings
@@ -23,7 +25,8 @@ Plug 'Yggdroot/indentLine' " display the indention levels
 Plug 'blueyed/vim-diminactive' " dim inactive windows
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
-Plug 'posva/vim-vue', { 'for': ['vue'] } " syntax highlight for vue.js components
+Plug 'posva/vim-vue' " syntax highlight for vue.js components
+Plug 'gcavallanti/vim-noscrollbar' " scrollbar-like widget for the statusline
 
 " deoplete - asynchronous completion framework
 if has('nvim')
@@ -111,8 +114,6 @@ nnoremap <space> za " space open/closes folds
 set foldmethod=indent " fold based on indent level
 
 " Movement
-inoremap <C-c> <esc>
-inoremap jk <esc>
 " disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -126,8 +127,10 @@ nnoremap gV `[v`]
 
 " Leader Shortcuts
 let mapleader="," " leader is comma
-nnoremap <leader>s :mksession<CR> " save session
-nnoremap <leader>a :Ag " open ag.vim
+" save session
+nnoremap <leader>s :mksession<CR>
+" open ag.vim
+nnoremap <leader>a :Ag
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
@@ -149,10 +152,8 @@ endif
 
 " NERDTree
 autocmd vimenter * NERDTree
-let NERDTreeMapActivateNode='<right>'
+let NERDTreeMapActivateNode='l'
 let NERDTreeShowHidden=1
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
@@ -161,8 +162,27 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'onedark'
+      \ 'colorscheme': 'onedark',
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \   'percent': 'NoScrollbarForLightline'
       \ }
+      \ }
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction<Paste>
+
+" Instead of % show NoScrollbar horizontal scrollbar
+function! NoScrollbarForLightline()
+    return noscrollbar#statusline()
+endfunction
+
 if !has('gui_running')
   set t_Co=256
 endif
@@ -202,5 +222,10 @@ set title titlestring= " enable the title option
 " vim-diminactive
 let g:diminactive_use_syntax = 1
 
-" deoplete.
+" deoplete
 let g:deoplete#enable_at_startup = 1
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
