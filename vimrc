@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 Plug 'gioele/vim-autoswap'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -25,6 +26,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 set number
 set showcmd
 set cursorline
+hi CursorLine cterm=NONE ctermbg=8
 set lazyredraw
 set showmatch
 set hidden
@@ -32,9 +34,9 @@ set textwidth=80
 set colorcolumn=+1,+41
 set fillchars+=vert:│
 
-let &t_SI = "\<Esc>[5 q"
-let &t_SR = "\<Esc>[5 q"
-let &t_EI .= "\<Esc>[3 q"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 set ignorecase
 set smartcase
@@ -52,4 +54,17 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 set title titlestring=
+
+let g:onedark_terminal_italics=1
+
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+colorscheme onedark
 
