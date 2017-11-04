@@ -18,7 +18,7 @@ scrollback_lines = 10000
 foreground = #abb2bf
 foreground_bold = #abb2bf
 cursor = #3b84c0
-cursor_foreground = #abb2bf
+cursor_foreground = #ffffff
 background = #282c34
 highlight = #5c6370
 
