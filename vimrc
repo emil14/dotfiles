@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible' " universal set of defaults everyone can agree on
+Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
 Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
@@ -40,7 +41,7 @@ endif
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
   \ 'do': 'npm install -g tern',
-  \ 'for': ['javascript', 'javascript.jsx', 'vue']
+  \ 'for': ['javascript', 'javascript.jsx']
 \}
 
 call plug#end()
@@ -88,12 +89,10 @@ set conceallevel=1
 " hide the sign on blank lines
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
+" set cursor style for different modes in Vim
 let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[3 q"
-
-"autocmd InsertEnter * highlight CursorLine cterm=underline term=underline
-"autocmd InsertLeave * highlight CursorLine cterm=NONE term=NONE
 
 " highlight matches
 set updatetime=300
@@ -229,3 +228,7 @@ let g:deoplete#enable_at_startup = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" vim-vue
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+let g:vue_disable_pre_processors=1 " disable checking for prepocessors
