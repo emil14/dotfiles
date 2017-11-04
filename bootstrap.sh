@@ -11,6 +11,7 @@ sudo apt-get -y -qq install \
   silversearcher-ag \
   python3-pip \
   nodejs \
+  ruby-full \
   ranger \
     caca-utils \
     highlight \
@@ -28,9 +29,8 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons
 cd ranger_devicons && make install
 cd ../ && rm -rf ranger_devicons
 
-# enable Python3 interface for deoplete.nvim
-pip3 install neovim
-pip3 install --upgrade neovim
+# Ruby-provider for NeoVim
+gem install neovim
 
 # vim plugins and theme
 vim +PluginInstall +qall
