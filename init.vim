@@ -7,7 +7,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible' " universal set of defaults everyone can agree on
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
@@ -27,16 +26,8 @@ Plug 'blueyed/vim-diminactive' " dim inactive windows
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
 Plug 'posva/vim-vue' " syntax highlight for vue.js components
-Plug 'gcavallanti/vim-noscrollbar' " scrollbar-like widget for the statusline
 
-" deoplete - asynchronous completion framework
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
@@ -45,8 +36,6 @@ Plug 'carlitux/deoplete-ternjs', {
 \}
 
 call plug#end()
-
-runtime plugin/sensible.vim " override vim-sensible
 
 " Colors
 let g:onedark_terminal_italics=1
@@ -63,6 +52,9 @@ endif
 
 colorscheme onedark
 
+hi VertSplit guifg=#4b5263
+" hi StatusLine guifg=#000000 guibg=#4b5263
+
 " Spaces & Tabs
 set wrap " this enables 'visual' wrapping
 set tabstop=2 " number of visual spaces per TAB
@@ -78,7 +70,7 @@ set number " show line numbers
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
 set cursorcolumn " highlight current column
-set lazyredraw " redraw only when we need to.
+" set lazyredraw " redraw only when we need to.
 set showmatch " highlight matching [{()}]
 set hidden " hides buffers instead of closing them
 set textwidth=80
@@ -164,8 +156,7 @@ let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'component_function': {
       \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \   'percent': 'NoScrollbarForLightline'
+      \   'fileformat': 'MyFileformat'
       \ }
       \ }
 
@@ -176,11 +167,6 @@ endfunction
 function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction<Paste>
-
-" Instead of % show NoScrollbar horizontal scrollbar
-function! NoScrollbarForLightline()
-    return noscrollbar#statusline()
-endfunction
 
 if !has('gui_running')
   set t_Co=256
