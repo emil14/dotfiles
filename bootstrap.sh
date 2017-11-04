@@ -4,14 +4,14 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y -qq install \
-  zsh \ # cooler than your shell
-  git \ # VCS we deserved
-  i3 \ # improved tiling wm
-  silversearcher-ag \ # like grep or ack, but faster
-  python3-pip \ # tool for installing Python packages
-  nodejs \ # JavaScript runtime
-  ranger \ # VIM-inspired terminal filemanager
-    # and it's dependencies
+  zsh \
+  neovim \
+  git \
+  i3 \
+  silversearcher-ag \
+  python3-pip \
+  nodejs \
+  ranger \
     caca-utils \
     highlight \
     atool \
@@ -27,11 +27,6 @@ cd ../ && rm -rf nerd-fonts
 git clone https://github.com/alexanderjeurissen/ranger_devicons
 cd ranger_devicons && make install
 cd ../ && rm -rf ranger_devicons
-
-# neovim
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
 
 # enable Python3 interface for deoplete.nvim
 pip3 install neovim
