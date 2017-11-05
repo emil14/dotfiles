@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
+Plug 'airblade/vim-gitgutter' " plugin which shows a git diff in the gutter
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
 Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
@@ -26,8 +27,7 @@ Plug 'blueyed/vim-diminactive' " dim inactive windows
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
 Plug 'posva/vim-vue' " syntax highlight for vue.js components
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
 
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
@@ -53,7 +53,6 @@ endif
 colorscheme onedark
 
 hi VertSplit guifg=#4b5263
-" hi StatusLine guifg=#000000 guibg=#4b5263
 
 " Spaces & Tabs
 set wrap " this enables 'visual' wrapping
@@ -70,13 +69,17 @@ set number " show line numbers
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
 set cursorcolumn " highlight current column
-" set lazyredraw " redraw only when we need to.
+set lazyredraw " redraw only when we need to.
 set showmatch " highlight matching [{()}]
 set hidden " hides buffers instead of closing them
 set textwidth=80
 set colorcolumn=+1,+41
 set fillchars+=vert:│
 set conceallevel=1
+
+" open new splits on the right or on the bottom of the screen
+set splitbelow
+set splitright
 
 " hide the sign on blank lines
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
@@ -90,7 +93,6 @@ let &t_EI .= "\<Esc>[3 q"
 set updatetime=300
 au! CursorMoved * set nohlsearch
 au! CursorHold * set hlsearch | let @/='\<'.expand("<cword>").'\>'
-set hlsearch
 
 " Searching
 set ignorecase " ignore case when searching
@@ -105,14 +107,17 @@ nnoremap <space> za " space open/closes folds
 set foldmethod=indent " fold based on indent level
 
 " Movement
+
 " disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
 " highlight last inserted text
 nnoremap gV `[v`]
 
@@ -219,3 +224,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 let g:vue_disable_pre_processors=1 " disable checking for prepocessors
 
+set synmaxcol=128
+syntax sync minlines=256
