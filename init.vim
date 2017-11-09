@@ -87,11 +87,6 @@ set splitright
 " hide the sign on blank lines
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
-" set cursor style for different modes in Vim
-let &t_SI = "\<Esc>[5 q"
-let &t_SR = "\<Esc>[5 q"
-let &t_EI .= "\<Esc>[3 q"
-
 " highlight matches
 set updatetime=300
 au! CursorMoved * set nohlsearch
