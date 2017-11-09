@@ -8,27 +8,30 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
-Plug 'airblade/vim-gitgutter' " plugin which shows a git diff in the gutter
+Plug 'blueyed/vim-diminactive' " dim inactive windows
+Plug 'gioele/vim-autoswap' " dealing with swap files
+
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
-Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
-Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
 Plug 'itchyny/lightline.vim' " statusline
+Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
+Plug 'Yggdroot/indentLine' " display the indention levels
+
+Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " cli tool
 Plug 'junegunn/fzf.vim' " fzf commands and mappings
-Plug 'joshdick/onedark.vim' " dark color sheme
-Plug 'sheerun/vim-polyglot' " collection of language packs
-Plug 'w0rp/ale' " asynchronous lint engine
-Plug 'mbbill/undotree' " history visualizer
-Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'mileszs/ack.vim' " run your favorite search tool from vim
-Plug 'gioele/vim-autoswap' " dealing with swap files
-Plug 'Yggdroot/indentLine' " display the indention levels
-Plug 'blueyed/vim-diminactive' " dim inactive windows
+
+Plug 'joshdick/onedark.vim' " dark color sheme
+
+Plug 'sheerun/vim-polyglot' " collection of language packs
+Plug 'posva/vim-vue' " syntax highlight for vue.js components
+Plug 'w0rp/ale' " asynchronous lint engine
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
-Plug 'posva/vim-vue' " syntax highlight for vue.js components
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
-
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
   \ 'do': 'npm install -g tern',
@@ -121,6 +124,24 @@ nnoremap k gk
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" terminal mappings
+tnoremap <Esc> <C-\><C-n> " ap <Esc> to exit terminal-mode
+
+" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+
 " Leader Shortcuts
 let mapleader="," " leader is comma
 " save session
@@ -199,13 +220,6 @@ let g:indentLine_concealcursor=''
 set concealcursor=ic
 let g:indentLine_char = '⎸'
 
-" undotree
-if has("persistent_undo")
-    set undodir=~/.undodir/
-    set undofile
-endif
-nnoremap <F5> :UndotreeToggle<cr>
-
 " vim-autoswap
 set title titlestring= " enable the title option
 
@@ -226,3 +240,5 @@ let g:vue_disable_pre_processors=1 " disable checking for prepocessors
 
 set synmaxcol=128
 syntax sync minlines=256
+
+set clipboard=unnamed
