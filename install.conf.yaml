@@ -5,14 +5,14 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: vimrc
-    ~/.config/nvim/init.vim: init.vim
     ~/.dotfiles: ''
+    ~/.zshrc: zshrc
+    ~/.vimrc: vimrc
+    ~/.config/nvim/init.vim: ./neovim/init.vim
     ~/.gitconfig: gitconfig
     ~/.i3/config:
       create: true
       path: i3
-    ~/.zshrc: zshrc
     ~/.config/ranger/rc.conf: ranger
     ~/.config/termite/config:
       create: true

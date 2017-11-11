@@ -9,26 +9,20 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
 Plug 'blueyed/vim-diminactive' " dim inactive windows
-Plug 'gioele/vim-autoswap' " dealing with swap files
-
+Plug 'gioele/vim-autoswap' " dealing with swap fiPlug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'itchyny/lightline.vim' " statusline
 Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
 Plug 'Yggdroot/indentLine' " display the indention levels
-
 Plug 'scrooloose/nerdcommenter' " plugin for intensely orgasmic commenting
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " cli tool
 Plug 'junegunn/fzf.vim' " fzf commands and mappings
 Plug 'mileszs/ack.vim' " run your favorite search tool from vim
-
 Plug 'joshdick/onedark.vim' " dark color sheme
-
 Plug 'sheerun/vim-polyglot' " collection of language packs
 Plug 'posva/vim-vue' " syntax highlight for vue.js components
 Plug 'w0rp/ale' " asynchronous lint engine
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
@@ -64,7 +58,6 @@ set softtabstop=2 " number of spaces in tab when editing
 set shiftwidth=2 " number of spaces to use for autoindenting
 set expandtab " tabs are spaces
 set smartindent " insert tabs on the start of a line according to shiftwidth, not tabstop
-
 autocmd BufWritePre * :%s/\s\+$//e " automatically removing trailing whitespace
 
 " UI Config
@@ -116,13 +109,10 @@ noremap <Right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
-" highlight last inserted text
-nnoremap gV `[v`]
-
 " terminal mappings
 tnoremap <Esc> <C-\><C-n> " ap <Esc> to exit terminal-mode
 
-" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+" Use ALT to deal with windows from any mode:
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
@@ -135,18 +125,19 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+nnoremap <A-q> <C-w>q
+nnoremap <A-s> <C-w>s
+nnoremap <A-v> <C-w>v
 
+" remap scroll keys
+nnoremap <C-k> <C-y>
+nnoremap <C-j> <C-e>
 
 " Leader Shortcuts
-let mapleader="," " leader is comma
-" save session
+map <Space> <Leader>
+nnoremap <leader>w :w!<CR>
 nnoremap <leader>s :mksession<CR>
-" open ag.vim
-nnoremap <leader>a :Ag
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>/ :Ag<CR>
 
 " Backups
 set backup
@@ -155,7 +146,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-"Plugs
+"Plugins
 
 " ack.vim
 if executable('ag') " use ag if available
@@ -179,7 +170,7 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat'
       \ }
-      \ }
+\ }
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -193,10 +184,8 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-" vim-javascript
+" vim-polyglot
 let g:javascript_plugin_flow = 1
-
-" vim-json
 let g:vim_json_syntax_conceal = 0
 
 " ale
