@@ -1,3 +1,9 @@
+" ================================ "
+" NeoVim configuration, entry point.
+"
+" Maintainer: Emil Valeev
+" ================================ "
+
 " Vim-Plug automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -5,7 +11,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Load plugins
+" Plugins loading
 call plug#begin('~/.vim/plugged')
 
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggles between hybrid and absolute line numbers automatically
@@ -27,6 +33,8 @@ Plug 'w0rp/ale' " asynchronous lint engine
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
+Plug 'justinmk/vim-sneak' " Jump to any location specified by two characters
+Plug 'Raimondi/delimitMate' " enable an auto-close chars feature
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
   \ 'do': 'npm install -g tern',
@@ -35,7 +43,7 @@ Plug 'carlitux/deoplete-ternjs', {
 
 call plug#end()
 
-" Load configuration modules
+" Configuration modules loading
 source ~/.config/nvim/colors.vim
 source ~/.config/nvim/interface.vim
 source ~/.config/nvim/mappings.vim

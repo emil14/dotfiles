@@ -1,3 +1,7 @@
+" ================================ "
+" User-interface configuration
+" ================================ "
+
 " Spaces & Tabs
 set wrap " this enables 'visual' wrapping
 set tabstop=2 " number of visual spaces per TAB
@@ -7,12 +11,10 @@ set expandtab " tabs are spaces
 set smartindent " insert tabs on the start of a line according to shiftwidth, not tabstop
 autocmd BufWritePre * :%s/\s\+$//e " automatically removing trailing whitespace on save
 
-" UI Config
+" UI
 set number " show line numbers
-" set showcmd " show command in bottom bar
 set cursorline " highlight current line
 set cursorcolumn " highlight current column
-set lazyredraw " redraw only when we need to.
 set showmatch " highlight matching [{()}]
 set hidden " hides buffers instead of closing them
 set textwidth=80
@@ -32,7 +34,7 @@ set ignorecase " ignore case when searching
 set smartcase " ignore case if search pattern is all lowercase
 set hlsearch " highlight search terms
 " open/closes folds
-nnoremap <leader> f
+" nnoremap <leader> f
 
 " highlight matches
 set updatetime=300
@@ -46,6 +48,8 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+" Performance improvements
+set lazyredraw
 set synmaxcol=128
 syntax sync minlines=256
 set clipboard+=unnamedplus

@@ -1,3 +1,10 @@
+" ================================ "
+" Plugins settings
+" ================================ "
+
+" fzf.vim
+let g:fzf_buffers_jump = 1 " [Buffers] Jump to the existing window if possible<Paste>
+
 " ack.vim
 if executable('ag') " use ag if available
   let g:ackprg = 'ag --vimgrep'
@@ -7,8 +14,6 @@ endif
 autocmd vimenter * NERDTree
 let NERDTreeMapActivateNode='l'
 let NERDTreeShowHidden=1
-map <C-n> :NERDTreeToggle<CR>
-nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -72,3 +77,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 let g:vue_disable_pre_processors=1 " disable checking for prepocessors
 
+" vim-sneak
+let g:sneak#label = 1 " Try label-mode for a minimalist alternative to EasyMotion

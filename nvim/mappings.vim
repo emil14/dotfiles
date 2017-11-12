@@ -1,3 +1,7 @@
+" ================================ "
+" Key mappings
+" ================================ "
+
 " disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -35,7 +39,21 @@ nnoremap <C-j> <C-e>
 " Leader Shortcuts
 map <Space> <Leader>
 nnoremap <leader>w :w!<CR>
+nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>s :mksession<CR>
-nnoremap <leader>/ :Ag<CR>
+nnoremap <leader>a :Ag<CR>
+nnoremap <Leader>o :Files<CR>
+nmap <leader>j :NERDTreeFind<CR>
 
+" Omnicomplete Better Nav
+inoremap <expr> <S-j> ("\<C-n>")
+inoremap <expr> <S-k> ("\<C-p>")
 
+let g:fzf_action = {
+  \ 'alt-t': 'tab split',
+  \ 'alt-s': 'split',
+  \ 'alt-v': 'vsplit' }
+
+map <C-n> :NERDTreeToggle<CR>
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
