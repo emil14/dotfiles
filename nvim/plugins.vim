@@ -79,3 +79,4 @@ let g:vue_disable_pre_processors=1 " disable checking for prepocessors
 
 " vim-sneak
 let g:sneak#label = 1 " Try label-mode for a minimalist alternative to EasyMotion
+

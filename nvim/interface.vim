@@ -37,9 +37,7 @@ set hlsearch " highlight search terms
 " nnoremap <leader> f
 
 " highlight matches
-set updatetime=300
-au! CursorMoved * set nohlsearch
-au! CursorHold * set hlsearch | let @/='\<'.expand("<cword>").'\>'
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Backups
 set backup
@@ -53,3 +51,7 @@ set lazyredraw
 set synmaxcol=128
 syntax sync minlines=256
 set clipboard+=unnamedplus
+set ttyfast
+
+set timeoutlen=1000 ttimeoutlen=0
+

@@ -35,6 +35,8 @@ nnoremap <A-v> <C-w>v
 " remap scroll keys
 nnoremap <C-k> <C-y>
 nnoremap <C-j> <C-e>
+nnoremap <C-h> <C-u>
+nnoremap <C-l> <C-d>
 
 " Leader Shortcuts
 map <Space> <Leader>
@@ -57,3 +59,8 @@ let g:fzf_action = {
 map <C-n> :NERDTreeToggle<CR>
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+
+" Yank from cursor to EOL
+nnoremap Y y$
+" Delete from cursor to EOL in Insert mode
+inoremap <C-Del> <C-\><C-O>D
