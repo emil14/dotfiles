@@ -33,8 +33,6 @@ set foldmethod=indent " fold based on indent level
 set ignorecase " ignore case when searching
 set smartcase " ignore case if search pattern is all lowercase
 set hlsearch " highlight search terms
-" open/closes folds
-" nnoremap <leader> f
 
 " highlight matches
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
@@ -50,8 +48,9 @@ set writebackup
 set lazyredraw
 set synmaxcol=128
 syntax sync minlines=256
-set clipboard+=unnamedplus
 set ttyfast
 
-set timeoutlen=1000 ttimeoutlen=0
+" Other
+set clipboard+=unnamedplus " use system clipboard
+set timeoutlen=1000 ttimeoutlen=0 " keyboard sequence react timeout
 

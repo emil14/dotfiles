@@ -51,16 +51,19 @@ nmap <leader>j :NERDTreeFind<CR>
 inoremap <expr> <S-j> ("\<C-n>")
 inoremap <expr> <S-k> ("\<C-p>")
 
+" FZF
 let g:fzf_action = {
   \ 'alt-t': 'tab split',
   \ 'alt-s': 'split',
-  \ 'alt-v': 'vsplit' }
+  \ 'alt-v': 'vsplit'}
 
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" Vim-Sneak
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-" Yank from cursor to EOL
+" Useful EOL mappings
 nnoremap Y y$
-" Delete from cursor to EOL in Insert mode
 inoremap <C-Del> <C-\><C-O>D

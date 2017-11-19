@@ -28,7 +28,6 @@ Plug 'junegunn/fzf.vim' " fzf commands and mappings
 Plug 'mileszs/ack.vim' " run your favorite search tool from vim
 Plug 'joshdick/onedark.vim' " dark color sheme
 Plug 'sheerun/vim-polyglot' " collection of language packs
-" Plug 'posva/vim-vue' " syntax highlight for vue.js components
 Plug 'w0rp/ale' " asynchronous lint engine
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework
 Plug 'SirVer/ultisnips' " snippet engine
@@ -46,6 +45,6 @@ call plug#end()
 
 " Configuration modules loading
 source ~/.config/nvim/colors.vim
-source ~/.config/nvim/interface.vim
+source ~/.config/nvim/core-settings.vim
 source ~/.config/nvim/mappings.vim
-source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/plugins-settings.vim
