@@ -58,6 +58,7 @@ let g:fzf_action = {
   \ 'alt-v': 'vsplit'}
 
 " NERDTree
+let NERDTreeMapActivateNode='l'
 map <C-n> :NERDTreeToggle<CR>
 
 " Vim-Sneak
@@ -67,3 +68,4 @@ map F <Plug>Sneak_S
 " Useful EOL mappings
 nnoremap Y y$
 inoremap <C-Del> <C-\><C-O>D
+

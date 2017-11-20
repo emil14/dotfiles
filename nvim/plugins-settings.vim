@@ -11,8 +11,10 @@ if executable('ag') " use ag if available
 endif
 
 " NERDTree
-let NERDTreeMapActivateNode='l'
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -81,3 +83,5 @@ let g:vue_disable_pre_processors=1 " disable checking for prepocessors
 " vim-sneak
 let g:sneak#label = 1 " Try label-mode for a minimalist alternative to EasyMotion
 
+let g:focus_use_default_mapping = 0
+nmap <A-f> <Plug>FocusModeToggle
