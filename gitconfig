@@ -7,6 +7,9 @@
 	co = checkout
 	br = branch
 	ci = commit
-	st = status
+	st = status -sb
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	editor = vim
+[merge]
+  tool = vimdiff
