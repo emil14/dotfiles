@@ -23,20 +23,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat'
-      \ }
+\   'colorscheme': 'onedark'
 \ }
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction<Paste>
 
 if !has('gui_running')
   set t_Co=256
@@ -45,6 +33,8 @@ endif
 " vim-polyglot
 let g:javascript_plugin_flow = 1
 let g:vim_json_syntax_conceal = 0
+let g:vue_disable_pre_processors=1
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " ale
 let g:ale_fixers = {
@@ -59,8 +49,8 @@ let g:indentLine_leadingSpaceEnabled=1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_faster=1
 let g:indentLine_concealcursor=''
-set concealcursor=ic
 let g:indentLine_char = '⎸'
+set concealcursor=ic
 
 " vim-autoswap
 set title titlestring= " enable the title option
@@ -76,12 +66,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" vim-vue
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-let g:vue_disable_pre_processors=1 " disable checking for prepocessors
-
 " vim-sneak
-let g:sneak#label = 1 " Try label-mode for a minimalist alternative to EasyMotion
+let g:sneak#label = 1 " label-mode for a minimalist alternative to EasyMotion
 
+" vim-focus
 let g:focus_use_default_mapping = 0
 nmap <A-f> <Plug>FocusModeToggle

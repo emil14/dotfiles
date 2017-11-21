@@ -33,7 +33,6 @@ set foldmethod=indent " fold based on indent level
 set ignorecase " ignore case when searching
 set smartcase " ignore case if search pattern is all lowercase
 set hlsearch " highlight search terms
-
 " highlight matches
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 

@@ -19,7 +19,6 @@ Plug 'blueyed/vim-diminactive' " dim inactive windows
 Plug 'gioele/vim-autoswap' " dealing with swap files
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " tree explorer
 Plug 'itchyny/lightline.vim' " statusline
-Plug 'ryanoasis/vim-devicons' " file type glyphs/icons for popular Vim plugins
 Plug 'Yggdroot/indentLine' " display the indention levels
 Plug 'tomtom/tcomment_vim' " comment vim-plugin
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
