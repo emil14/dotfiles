@@ -47,9 +47,10 @@ let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 0
 let g:indentLine_leadingSpaceEnabled=1
 let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_fileTypeExclude = ['nerdtree']
 let g:indentLine_faster=1
 let g:indentLine_concealcursor=''
-let g:indentLine_char = '⎸'
+let g:indentLine_char = '┆'
 set concealcursor=ic
 
 " vim-autoswap
