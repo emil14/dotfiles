@@ -41,10 +41,11 @@ nnoremap <C-l> <C-d>
 " Leader Shortcuts
 map <Space> <Leader>
 nnoremap <leader>w :w!<CR>
+nnoremap <leader>q :q!<CR>
 nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>s :mksession<CR>
 nnoremap <leader>a :Ag<CR>
-nnoremap <Leader>o :Files<CR>
+nnoremap <leader>o :Files<CR>
 nmap <leader>j :NERDTreeFind<CR>
 
 " Omnicomplete Better Nav
