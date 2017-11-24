@@ -105,6 +105,9 @@ bar {
 
 # CUSTOM
 
+# disable tilebar
+new_window 1pixel
+
 # lang
 exec "setxkbmap -layout us,ru -option grp:caps_toggle"
 exec --no-startup-id "nm-applet --sm-disable"
