@@ -56,6 +56,9 @@ let g:fzf_action = {
 
 " NERDTree
 let NERDTreeMapActivateNode='l'
+let NERDTreeMapJumpParent='h'
+let NERDTreeMapChangeRoot='L'
+let NERDTreeMapUpdir='H'
 map <C-n> :NERDTreeToggle<CR>
 
 " Vim-Sneak
@@ -67,12 +70,10 @@ nnoremap Y y$
 inoremap <C-Del> <C-\><C-O>D
 
 " incsearch.vim
+let g:incsearch#auto_nohlsearch = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-" :h g:incsearch#auto_nohlsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
