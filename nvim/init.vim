@@ -19,7 +19,7 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " cli tool
 Plug 'junegunn/fzf.vim' " fzf commands and mappings
 Plug 'mileszs/ack.vim' " run your favorite search tool from vim
-Plug 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
+Plug 'joshdick/onedark.vim' " dark color sheme
 Plug 'sheerun/vim-polyglot' " collection of language packs
 Plug 'w0rp/ale' " asynchronous lint engine
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion framework

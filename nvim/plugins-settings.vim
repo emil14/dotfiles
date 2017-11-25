@@ -17,12 +17,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " lightline
 let g:lightline = {
-\   'colorscheme': 'onedark'
-\ }
+      \ 'colorscheme': 'one',
+      \ }
 
 if !has('gui_running')
   set t_Co=256
 endif
+
+set noshowmode
 
 " vim-polyglot
 let g:javascript_plugin_flow = 1
