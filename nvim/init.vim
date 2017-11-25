@@ -33,7 +33,7 @@ Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets' " large collection of snippets
 Plug 'justinmk/vim-sneak' " Jump to any location specified by two characters
 Plug 'Raimondi/delimitMate' " enable an auto-close chars feature
-Plug 'merlinrebrovic/focus.vim' " enable an auto-close chars feature
+Plug 'haya14busa/incsearch.vim' " Improved incremental searching for
 " code-analysis engine for JavaScript
 Plug 'carlitux/deoplete-ternjs', {
   \ 'do': 'npm install -g tern',

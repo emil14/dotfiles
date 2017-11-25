@@ -33,8 +33,6 @@ set foldmethod=indent " fold based on indent level
 set ignorecase " ignore case when searching
 set smartcase " ignore case if search pattern is all lowercase
 set hlsearch " highlight search terms
-" highlight matches
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Backups
 set backup
@@ -52,4 +50,8 @@ set ttyfast
 " Other
 set clipboard+=unnamedplus " use system clipboard
 set timeoutlen=1000 ttimeoutlen=0 " keyboard sequence react timeout
-
+" disable netrw due to NERDTree usage
+augroup goodbye_netrw
+  au!
+  autocmd VimEnter * silent! au! FileExplorer *
+augroup END
