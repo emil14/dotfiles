@@ -1,7 +1,3 @@
-" ================================ "
-" User-interface configuration
-" ================================ "
-
 " Spaces & Tabs
 set wrap " this enables 'visual' wrapping
 set tabstop=2 " number of visual spaces per TAB

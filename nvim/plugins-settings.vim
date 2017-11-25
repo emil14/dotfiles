@@ -1,7 +1,3 @@
-" ================================ "
-" Plugins settings
-" ================================ "
-
 " fzf.vim
 let g:fzf_buffers_jump = 1 " [Buffers] Jump to the existing window if possible<Paste>
 

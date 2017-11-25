@@ -1,7 +1,3 @@
-" ================================ "
-" Key mappings
-" ================================ "
-
 " disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>

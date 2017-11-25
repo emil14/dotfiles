@@ -1,7 +1,3 @@
-" ================================ "
-" Colors customisation module
-" ================================ "
-
 let g:onedark_terminal_italics=1
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

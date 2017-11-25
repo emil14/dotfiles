@@ -1,9 +1,3 @@
-" ================================ "
-" NeoVim configuration, entry point.
-"
-" Maintainer: Emil Valeev
-" ================================ "
-
 " Vim-Plug automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
