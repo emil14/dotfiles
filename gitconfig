@@ -1,15 +1,15 @@
 [user]
-	email = emil.musician@gmail.com
-	name = Emil Valeev
+  email = emil.musician@gmail.com
+  name = Emil Valeev
 [push]
-	default = simple
+  default = simple
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status -sb
+  co = checkout
+  br = branch
+  ci = commit
+  st = status -sb
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-	editor = vim
+  editor = vim
 [merge]
   tool = vimdiff

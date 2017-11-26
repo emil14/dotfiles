@@ -11,6 +11,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHijackNetrw = 0
+let g:NERDTreeChDirMode = 2
 autocmd VimEnter * NERDTree
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
