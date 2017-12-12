@@ -6,7 +6,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

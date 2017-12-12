@@ -8,6 +8,7 @@ sudo apt-get -y -qq install \
   zsh \
   git \
   i3 \
+  rofi \
   ranger \
 
 # oh-my-zsh
