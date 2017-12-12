@@ -4,7 +4,7 @@ font pango: Terminus 16px
 
 floating_modifier $mod
 
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
@@ -105,18 +105,12 @@ bar {
 
 # CUSTOM
 
-# disable tilebar
-new_window 1pixel
-
 # lang
 exec "setxkbmap -layout us,ru -option grp:caps_toggle"
 exec --no-startup-id "nm-applet --sm-disable"
 
 # lock
 bindsym $mod+Escape exec "i3lock -fc 000000"
-
-# screen
-exec "xrandr --output HDMI-1 --pos 0x0 --output eDP-1 --pos 277x1080"
 
 # background
 exec "feh --bg-scale ~/Pictures/wallpaper.png"
