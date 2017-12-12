@@ -8,15 +8,11 @@
     ~/.dotfiles: ''
     ~/.zshrc: zshrc
     ~/.vimrc: vimrc
-    ~/.config/nvim: ./nvim/
     ~/.gitconfig: gitconfig
     ~/.i3/config:
       create: true
       path: i3
     ~/.config/ranger/rc.conf: ranger
-    ~/.config/termite/config:
-      create: true
-      path: termite
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
