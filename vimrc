@@ -7,7 +7,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
-Plug 'gioele/vim-autoswap'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
@@ -24,15 +23,16 @@ set smartindent
 autocmd BufWritePre * :%s/\s\+$//e
 
 set number
+set relativenumber
 set showcmd
 set cursorline
-hi CursorLine cterm=NONE ctermbg=8
 set lazyredraw
 set showmatch
 set hidden
 set textwidth=80
 set colorcolumn=+1,+41
 set fillchars+=vert:│
+hi CursorLine cterm=NONE ctermbg=8
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
