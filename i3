@@ -101,6 +101,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         tray_output primary
+        position top
 }
 
 # CUSTOM
