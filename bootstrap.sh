@@ -10,6 +10,7 @@ sudo apt-get -y -qq install \
   i3 \
   rofi \
   ranger \
+  xfonts-terminus \
 
 # oh-my-zsh
 sh -c "$(curl -fsSL
