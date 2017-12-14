@@ -26,3 +26,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | b
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# terminus-ttf
+curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
+unzip latest.zip && rm latest.zip
+mv terminus-ttf-4.46.0 ~/.fonts
