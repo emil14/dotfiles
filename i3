@@ -117,3 +117,5 @@ bindsym $mod+Escape exec "i3lock -fc 000000"
 exec "feh --bg-scale ~/Pictures/wallpaper.png"
 
 new_window pixel 4
+
+hide_edge_borders vertical
