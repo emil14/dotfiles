@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # apt packages
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y -qq install \
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y -qq \
   vim \
   zsh \
   git \
@@ -13,8 +13,7 @@ sudo apt-get -y -qq install \
   xfonts-terminus \
 
 # oh-my-zsh
-sh -c "$(curl -fsSL
-https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
