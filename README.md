@@ -1,8 +1,23 @@
-# dotfiles
-Configuration files. :floppy_disk:
+# Dotfiles :floppy_disk:
+
+> Linux (Debian mostly) configuration files.
 
 ## Install
-```shell
+
+clone the repository:
+
+```bash
 git clone git@github.com:emil14/dotfiles.git
-cd dotfiles && ./install
+```
+
+setup symlinks:
+
+```bash
+cd dotfiles
+./install
+```
+
+install dependencies:
+```bash
+./bootstrap.sh
 ```
