@@ -119,3 +119,7 @@ exec "feh --bg-scale ~/Pictures/wallpaper.png"
 new_window pixel 4
 
 hide_edge_borders vertical
+
+# Move workspases between monitors
+bindsym $mod+Shift+greater move workspace to output right                                                                        
+bindsym $mod+Shift+less move workspace to output left
