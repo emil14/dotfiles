@@ -4,11 +4,17 @@
 [push]
   default = simple
 [alias]
-  co = checkout
   br = branch
   ci = commit
-  st = status -sb
+  cl = clone
+  co = checkout
+  df = diff
+  ft = fetch
+  mg = merge
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  pl = pull
+  ps = push
+  st = status -sb
 [core]
   editor = vim
 [merge]
