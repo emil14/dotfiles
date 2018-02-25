@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH=/home/emil14/.oh-my-zsh
+export ZSH=/home/$USER/.oh-my-zsh
 export EDITOR=vim
 
 ZSH_THEME="bira"
