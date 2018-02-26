@@ -16,6 +16,12 @@
   ps = push
   st = status -sb
 [core]
-  editor = vim
+  editor = code --wait
 [merge]
-  tool = vimdiff
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[diff]
+  tool = default-difftool
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
