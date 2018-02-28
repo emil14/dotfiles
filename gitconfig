@@ -6,15 +6,18 @@
 [alias]
   br = branch
   ci = commit
+  cia = commit --amend
   cl = clone
   co = checkout
+  cp = cherry-pick
   df = diff
   ft = fetch
   mg = merge
-  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)'
   pl = pull
   ps = push
   st = status -sb
+  rb = rebase
 [core]
   editor = code --wait
 [merge]
