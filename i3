@@ -5,6 +5,7 @@ font pango: Terminus 16px
 floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3.sh
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run
 
@@ -101,7 +102,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         tray_output primary
-        position top
 }
 
 # CUSTOM
@@ -118,8 +118,9 @@ exec "feh --bg-scale ~/Pictures/wallpaper.png"
 
 new_window pixel 4
 
-hide_edge_borders vertical
-
 # Move workspases between monitors
-bindsym $mod+Shift+greater move workspace to output right                                                                        
+bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
+
+# Screen Shots
+bindsym $mod+z scrot -s '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots/'
