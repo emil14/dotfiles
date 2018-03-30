@@ -9,6 +9,7 @@ sudo apt install -y -qq \
   git \
   curl \
   i3 \
+    i3blocks \
   rofi \
   ranger \
   xfonts-terminus \
@@ -22,12 +23,15 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
-
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
+
+# npm packages
+npm i -g diff-so-fancy
 
 # terminus-ttf
 curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
