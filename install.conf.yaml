@@ -9,6 +9,7 @@
     ~/.zshrc: zshrc
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
+    ~/.i3blocks.conf: i3blocks.conf
     ~/.i3/config:
       create: true
       path: i3
