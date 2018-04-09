@@ -124,3 +124,5 @@ bindsym $mod+Shift+less move workspace to output left
 
 # Screen Shots
 bindsym $mod+z scrot -s '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots/'
+
+hide_edge_borders both
