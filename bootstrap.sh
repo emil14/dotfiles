@@ -8,6 +8,7 @@ sudo apt install -y -qq \
   zsh \
   git \
   curl \
+  httpie \
   i3 \
     i3blocks \
   rofi \
