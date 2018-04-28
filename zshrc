@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH
 export ZSH=/home/$USER/.oh-my-zsh
 export EDITOR=vim
 

@@ -32,7 +32,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
 
 # npm packages
-npm i -g diff-so-fancy
+npm i -g diff-so-fancy tldr
 
 # terminus-ttf
 curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
