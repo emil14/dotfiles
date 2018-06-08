@@ -1,19 +1,25 @@
 #!/bin/bash
 
+# snap packages
+sudo snap install tldr
+
 # apt packages
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y -qq \
-  vim \
   zsh \
   git \
+  i3 \
+  i3blocks \
+  vim \
   curl \
   httpie \
-  i3 \
-    i3blocks \
   rofi \
   ranger \
   xfonts-terminus \
+  ruby-full \
+  libreadline6 \
+  libreadline6-dev \
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -32,7 +38,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
 
 # npm packages
-npm i -g diff-so-fancy tldr
+npm i -g diff-so-fancy
 
 # terminus-ttf
 curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
@@ -44,3 +50,11 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update
 sudo apt install code
+
+# gitsh
+curl -OL https://github.com/thoughtbot/gitsh/releases/download/v0.12/gitsh-0.12.tar.gz
+tar -zxvf gitsh-0.12.tar.gz
+cd gitsh-0.12
+RUBY=$(which ruby) ./configure
+make
+sudo make install
