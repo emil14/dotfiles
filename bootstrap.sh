@@ -17,9 +17,6 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
-  ruby-full \
-  libreadline6 \
-  libreadline6-dev \
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -45,16 +42,11 @@ curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
 unzip latest.zip && rm latest.zip
 mv terminus-ttf-4.46.0 ~/.fonts
 
-# vs-code
+# VS Code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update
 sudo apt install code
 
-# gitsh
-curl -OL https://github.com/thoughtbot/gitsh/releases/download/v0.12/gitsh-0.12.tar.gz
-tar -zxvf gitsh-0.12.tar.gz
-cd gitsh-0.12
-RUBY=$(which ruby) ./configure
-make
-sudo make install
+# Rust
+curl https://sh.rustup.rs -sSf | sh
