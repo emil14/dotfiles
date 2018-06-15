@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# snap packages
-sudo snap install tldr
-
 # apt packages
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y -qq \
+  snap \
   zsh \
   git \
   i3 \
@@ -17,6 +15,13 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
+
+# snap packages
+sudo snap refresh
+sudo snap install \
+  chromium
+  telegram-desktop
+  tldr
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -47,3 +52,4 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update
 sudo apt install code
+
