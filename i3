@@ -111,7 +111,7 @@ exec "setxkbmap -layout us,ru -option grp:caps_toggle"
 exec --no-startup-id "nm-applet --sm-disable"
 
 # lock
-bindsym $mod+Escape exec "i3lock -fc 000000"
+bindsym $mod+Escape exec "lock --pixelate"
 
 # background
 exec "feh --bg-scale ~/Pictures/wallpaper.png"
