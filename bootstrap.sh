@@ -16,6 +16,9 @@ sudo apt install -y -qq \
   ranger \
   xfonts-terminus \
 
+# switch shell to zsh
+chsh -s /usr/bin/zsh
+
 # snap packages
 sudo snap refresh
 sudo snap install \
