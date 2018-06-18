@@ -16,7 +16,6 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
-  nemo \
 
 # snap packages
 sudo snap refresh
