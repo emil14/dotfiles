@@ -16,7 +16,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
-alias vi='vim'
 alias man='tldr'
 
 export NVM_DIR="$HOME/.nvm"
