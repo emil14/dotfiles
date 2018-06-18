@@ -5,14 +5,13 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y -qq \
   snap \
-  scrot \
   zsh \
   git \
+  vim \
+  scrot \
+  curl \
   i3 \
   i3blocks \
-  vim \
-  curl \
-  httpie \
   rofi \
   ranger \
   xfonts-terminus \
