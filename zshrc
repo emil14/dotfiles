@@ -1,11 +1,12 @@
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH
-export ZSH=/home/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export EDITOR=vim
 
 ZSH_THEME="bira"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UPDATE_PROMPT=true
 
 plugins=(
   git
