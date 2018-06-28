@@ -1,6 +1,8 @@
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH
 export ZSH=$HOME/.oh-my-zsh
+export UPDATE_ZSH_DAYS=7
 export EDITOR=vim
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 ZSH_THEME="bira"
 ENABLE_CORRECTION="true"
@@ -12,9 +14,16 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  colored-man-pages
+  colorize
+  command-not-found
+  cp
+  dircycle
+  extract
+  vi-mode
 )
 
-source $ZSH
+source $ZSH/oh-my-zsh.sh
 
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias man='tldr'
