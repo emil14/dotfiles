@@ -1,6 +1,6 @@
 # Dotfiles :floppy_disk:
 
-> Linux (Ubuntu mostly) configuration files.
+> Linux (Debian based) configuration files.
 
 ## Install
 
