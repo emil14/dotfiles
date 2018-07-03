@@ -22,9 +22,9 @@ chsh -s /usr/bin/zsh
 # snap packages
 sudo snap refresh
 sudo snap install \
-  chromium
-  telegram-desktop
-  tldr
+  chromium \
+  telegram-desktop \
+  tldr \
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
