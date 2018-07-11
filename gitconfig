@@ -6,6 +6,7 @@
 [alias]
   br = branch
   ci = commit
+  cim = commit -m
   cia = commit --amend
   cl = clone
   co = checkout
