@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:/snap/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=7
 export EDITOR=vim
@@ -14,13 +14,6 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  colored-man-pages
-  colorize
-  command-not-found
-  cp
-  dircycle
-  extract
-  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
