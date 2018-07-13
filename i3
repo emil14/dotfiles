@@ -24,25 +24,15 @@ bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+h split h
 bindsym $mod+Shift+v split v
-
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -70,30 +60,46 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar
 bar {
-        status_command i3blocks
+  status_command i3blocks
+  colors {
+    background #282C34
+    statusline #FFFFFF
+    separator  #666666
+
+    focused_workspace  #61AFEF #3B84C0 #FFFFFF
+    active_workspace   #abb2bf #5C6370 #FFFFFF
+    inactive_workspace #5C6370 #282c34 #828997
+    urgent_workspace   #2F343A #BE5046 #FFFFFF
+    binding_mode       #2F343A #E06C75 #FFFFFF
+  }
 }
 
-### CUSTOM ###
+# Colors
+# class                 border  bground text    indicator child_border
+client.focused          #61AFEF #3B84C0 #FFFFFF #3B84C0   #61AFEF
+client.focused_inactive #ABB2BF #282C34 #ABB2BF #484E50   #5F676A
+client.unfocused        #828997 #282C34 #828997 #292D2E   #222222
+client.urgent           #E06C75 #BE5046 #FFFFFF #900000   #900000
+client.placeholder      #000000 #5C6370 #ABB2BF #000000   #0C0C0C
+client.background       #5C6370
 
 # Switch language
 exec "setxkbmap -layout us,ru -option grp:caps_toggle"
@@ -104,7 +110,7 @@ bindsym $mod+Escape exec "lock --pixelate"
 
 # Borders
 for_window [class="^.*"] border pixel 2
-hide_edge_borders both
+hide_edge_borders smart
 
 # Move workspases between monitors
 bindsym $mod+Shift+greater move workspace to output right
