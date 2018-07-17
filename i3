@@ -5,7 +5,6 @@ font pango: Terminus 16px
 floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec i3.sh
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run
 
@@ -25,25 +24,15 @@ bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+h split h
 bindsym $mod+Shift+v split v
-
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -71,52 +60,57 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-        status_command i3blocks
+  status_command i3blocks
+  colors {
+    background #282C34
+    statusline #FFFFFF
+    separator  #666666
+
+    focused_workspace  #61AFEF #3B84C0 #FFFFFF
+    active_workspace   #abb2bf #5C6370 #FFFFFF
+    inactive_workspace #5C6370 #282c34 #828997
+    urgent_workspace   #2F343A #BE5046 #FFFFFF
+    binding_mode       #2F343A #E06C75 #FFFFFF
+  }
 }
-# tray_output primary
 
-# CUSTOM
+# Colors
+# class                 border  bground text    indicator child_border
+client.focused          #61AFEF #3B84C0 #FFFFFF #3B84C0   #61AFEF
+client.focused_inactive #ABB2BF #282C34 #ABB2BF #484E50   #5F676A
+client.unfocused        #828997 #282C34 #828997 #292D2E   #222222
+client.urgent           #E06C75 #BE5046 #FFFFFF #900000   #900000
+client.placeholder      #000000 #5C6370 #ABB2BF #000000   #0C0C0C
+client.background       #5C6370
 
-# lang
+# Switch language
 exec "setxkbmap -layout us,ru -option grp:caps_toggle"
 exec --no-startup-id "nm-applet --sm-disable"
 
-# lock
+# Lock sreen
 bindsym $mod+Escape exec "lock --pixelate"
 
-# background
-exec "feh --bg-scale ~/Pictures/wallpaper.png"
-
-new_window pixel 4
+# Borders
+for_window [class="^.*"] border pixel 2
+hide_edge_borders smart
 
 # Move workspases between monitors
 bindsym $mod+Shift+greater move workspace to output right
@@ -125,7 +119,15 @@ bindsym $mod+Shift+less move workspace to output left
 # Screen Shots
 bindsym --release $mod+z exec scrot -s -e 'mv $f ~/Pictures/screenshots/'
 
-hide_edge_borders both
-
+# Moving throught worpspaces with mouse
 bindsym --whole-window $mod+button4 workspace prev_on_output
 bindsym --whole-window $mod+button5 workspace next_on_output
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness

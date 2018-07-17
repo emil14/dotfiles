@@ -15,6 +15,9 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
+  xbacklight \
+  alsa-utils \
+  pulseaudio \
 
 # switch shell to zsh
 chsh -s /usr/bin/zsh
