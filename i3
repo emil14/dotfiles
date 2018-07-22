@@ -58,7 +58,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 bindsym $mod+r mode "resize"
 
@@ -75,20 +75,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bar {
-  status_command i3blocks
-  mode hide
-  colors {
-    background #282C34
-    statusline #FFFFFF
-    separator  #666666
-    focused_workspace  #61AFEF #3B84C0 #FFFFFF
-    active_workspace   #abb2bf #5C6370 #FFFFFF
-    inactive_workspace #5C6370 #282c34 #828997
-    urgent_workspace   #2F343A #BE5046 #FFFFFF
-    binding_mode       #2F343A #E06C75 #FFFFFF
-  }
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Colors
 # class                 border  bground text    indicator child_border
@@ -100,7 +87,7 @@ client.placeholder      #000000 #5C6370 #ABB2BF #000000   #0C0C0C
 client.background       #5C6370
 
 # Switch language
-exec "setxkbmap -layout us,ru -option grp:caps_toggle"
+exec "setxkbmap -layout us,ru -option grp:caps_toggle1"
 exec --no-startup-id "nm-applet --sm-disable"
 
 # Lock sreen
@@ -109,6 +96,7 @@ bindsym $mod+Escape exec "lock --pixelate"
 # Borders
 for_window [class="^.*"] border pixel 2
 hide_edge_borders smart
+smart_borders on
 
 # Move workspases between monitors
 bindsym $mod+Shift+greater move workspace to output right
@@ -129,3 +117,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Gaps
+gaps inner 10
+gaps outer 20
+
+focus_on_window_activation smart
