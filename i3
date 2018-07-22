@@ -79,6 +79,7 @@ bindsym $mod+r mode "resize"
 
 bar {
   status_command i3blocks
+  mode hide
   colors {
     background #282C34
     statusline #FFFFFF
