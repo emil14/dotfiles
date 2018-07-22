@@ -15,6 +15,7 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
+  font-awesome \
   xbacklight \
   alsa-utils \
   pulseaudio \
@@ -60,7 +61,7 @@ sudo apt update
 sudo apt install code
 
 # i3blocks-contrib
-mkdir -p ~/.config/i3blocks
+mkdir -p ~/.config/i3blocks/blocklets
 git clone https://github.com/vivien/i3blocks-contrib
 mv i3blocks-contrib/* ~/.config/i3blocks/blocklets && rm -rf i3blocks-contrib
 
