@@ -60,6 +60,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $mod+r mode "resize"
 mode "resize" {
   bindsym j resize shrink width 10 px or 10 ppt
   bindsym k resize grow height 10 px or 10 ppt
@@ -74,8 +75,6 @@ mode "resize" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
-bindsym $mod+r mode "resize"
 
 bar {
   status_command i3blocks
@@ -117,10 +116,10 @@ hide_edge_borders smart
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
-# Screen Shots
+# Make a screenshot
 bindsym --release $mod+z exec scrot -s -e 'mv $f ~/Pictures/screenshots/'
 
-# Moving throught worpspaces with mouse
+# Move throught worpspaces with mouse
 bindsym --whole-window $mod+button4 workspace prev_on_output
 bindsym --whole-window $mod+button5 workspace next_on_output
 
