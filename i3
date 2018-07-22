@@ -61,17 +61,16 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+r mode "resize"
+
 mode "resize" {
   bindsym j resize shrink width 10 px or 10 ppt
   bindsym k resize grow height 10 px or 10 ppt
   bindsym l resize shrink height 10 px or 10 ppt
   bindsym semicolon resize grow width 10 px or 10 ppt
-
   bindsym Left resize shrink width 10 px or 10 ppt
   bindsym Down resize grow height 10 px or 10 ppt
   bindsym Up resize shrink height 10 px or 10 ppt
   bindsym Right resize grow width 10 px or 10 ppt
-
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
@@ -83,7 +82,6 @@ bar {
     background #282C34
     statusline #FFFFFF
     separator  #666666
-
     focused_workspace  #61AFEF #3B84C0 #FFFFFF
     active_workspace   #abb2bf #5C6370 #FFFFFF
     inactive_workspace #5C6370 #282c34 #828997
