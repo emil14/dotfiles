@@ -76,6 +76,7 @@ mode "resize" {
 }
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id compton
 
 # Colors
 # class                 border  bground text    indicator child_border

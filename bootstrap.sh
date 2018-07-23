@@ -15,6 +15,7 @@ sudo apt install -y -qq \
   scrot \
   curl \
   rofi \
+  comption \
   ranger \
   xfonts-terminus \
   font-awesome
