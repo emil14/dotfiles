@@ -17,10 +17,7 @@ sudo apt install -y -qq \
   rofi \
   ranger \
   xfonts-terminus \
-  font-awesome \
-  xbacklight \
-  alsa-utils \
-  pulseaudio
+  font-awesome
 
 # Snapcraft packages
 sudo snap refresh
