@@ -115,3 +115,7 @@ gaps inner 10
 gaps outer 20
 
 focus_on_window_activation smart
+
+# Wallpapers
+exec_always --no-startup-id $HOME/bin/wallpapers.sh
+
