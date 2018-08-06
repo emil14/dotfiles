@@ -92,11 +92,6 @@ curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
 unzip latest.zip && rm latest.zip
 mv terminus-ttf-4.46.0 ~/.fonts
 
-# Termite terminal emulator
-git clone https://github.com/Corwind/termite-install.git && cd termite-install
-chmod +x ./termite-install.sh && ./termite-install.sh
-cd ../ && rm -r termite-install
-
 #
 # Configurations
 #
