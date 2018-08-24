@@ -18,7 +18,7 @@ sudo apt install -y -qq \
   comption \
   ranger \
   xfonts-terminus \
-  font-awesome
+  fonts-font-awesome
 
 # Snapcraft packages
 sudo snap refresh
@@ -98,3 +98,8 @@ mv terminus-ttf-4.46.0 ~/.fonts
 
 # Switch shell to ZSH
 chsh -s /usr/bin/zsh
+
+# Hermit font
+curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
+cd ~/fonts && tar -xzf hermit.tar.gz
+rm hermit.tar.gz && cd ../
