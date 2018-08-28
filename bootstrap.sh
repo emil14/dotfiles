@@ -62,7 +62,9 @@ sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /et
 sudo apt update
 sudo apt install polybar
 
-### Shell things ###
+#
+# Shell things
+#
 
 # Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -76,6 +78,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Fuzzy finder
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+#
+# Configurations
+#
+
+# Switch shell to ZSH
+chsh -s /usr/bin/zsh
+
+# Set Chromium as a default browser
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
 
 #
 # Other
@@ -92,14 +104,7 @@ curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
 unzip latest.zip && rm latest.zip
 mv terminus-ttf-4.46.0 ~/.fonts
 
-#
-# Configurations
-#
-
-# Switch shell to ZSH
-chsh -s /usr/bin/zsh
-
 # Hermit font
 curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
-cd ~/fonts && tar -xzf hermit.tar.gz
-rm hermit.tar.gz && cd ../
+tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
+
