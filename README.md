@@ -1,6 +1,6 @@
 # Dotfiles
 
-> Linux (Ubuntu based) configuration files
+> Linux configuration files
 
 ## Install
 
