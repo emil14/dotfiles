@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Basic packages
+# "Core" packages
 #
 
 # APT packages
@@ -63,7 +63,7 @@ sudo apt update
 sudo apt install polybar
 
 #
-# Shell things
+# Shell stuff
 #
 
 # Oh My ZSH
@@ -80,19 +80,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 #
-# Configurations
-#
-
-# Switch shell to ZSH
-chsh -s /usr/bin/zsh
-
-# Set Chromium as a default browser
-sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
-
-#
 # Other
 #
-
+п
 # Visual Studio Code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -108,3 +98,17 @@ mv terminus-ttf-4.46.0 ~/.fonts
 curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
 tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
 
+# Termite terminal emulator
+git clone https://github.com/Corwind/termite-install.git
+chmod +x termite-install/termite-install.sh && ./termite-install/termite-install.sh
+rm -rf ./termite-install ./termite ./vte-ng
+
+#
+# Configurations
+#
+
+# Switch shell to ZSH
+chsh -s /usr/bin/zsh
+
+# Set Chromium as a default browser
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
