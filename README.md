@@ -4,20 +4,13 @@
 
 ## Install
 
-clone the repository:
-
 ```bash
+# clone the repository
 git clone git@github.com:emil14/dotfiles.git
-```
 
-setup symlinks:
+# setup symlinks
+cd dotfiles && ./install
 
-```bash
-cd dotfiles
-./install
-```
-
-install dependencies:
-```bash
-./bootstrap.sh
+# install dependencies and configure the system
+./setup.sh
 ```
