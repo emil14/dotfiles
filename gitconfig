@@ -4,6 +4,8 @@
 [push]
   default = simple
 [alias]
+  a = add
+  aa = add -A
   br = branch
   ci = commit
   cim = commit -m
@@ -20,6 +22,7 @@
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)'
   pl = pull
   ps = push
+  psf = push -f
   st = status -sb
   rb = rebase
   rbi = rebase -i origin/master
