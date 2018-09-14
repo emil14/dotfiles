@@ -25,7 +25,6 @@ sudo snap refresh
 sudo snap install \
   chromium \
   telegram-desktop \
-  tldr
 
 # Node Version Manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
@@ -82,7 +81,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 #
 # Other
 #
-п
+
 # Visual Studio Code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -99,9 +98,7 @@ curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
 tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
 
 # Termite terminal emulator
-git clone https://github.com/Corwind/termite-install.git
-chmod +x termite-install/termite-install.sh && ./termite-install/termite-install.sh
-rm -rf ./termite-install ./termite ./vte-ng
+source <(curl -s https://raw.githubusercontent.com/Corwind/termite-install/master/termite-install.sh)
 
 #
 # Configurations
