@@ -8,8 +8,10 @@
   ci = commit
   cim = commit -m
   cia = commit --amend
+  cian = commit --amend --no-edit
   cl = clone
   co = checkout
+  cob = checkout -b
   cp = cherry-pick
   df = diff
   dfc = diff --cached
@@ -20,7 +22,7 @@
   ps = push
   st = status -sb
   rb = rebase
-  # sq = rebase -i HEAD~
+  rbi = rebase -i origin/master
 [core]
   editor = code --wait
   pager = diff-so-fancy | less --tabs=4 -RFX
