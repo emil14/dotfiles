@@ -18,6 +18,7 @@
     ~/.config/polybar/launch.sh: polybar.sh
     ~/.bin/wallpapers.sh: wallpapers.sh
     ~/.config/compton.conf: compton.conf
+    ~/.config/chromium-flags.conf: chromium-flags.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
