@@ -4,8 +4,7 @@
 [push]
   default = simple
 [alias]
-  a = add
-  aa = add -A
+  adda = add -A
   br = branch
   ci = commit
   cim = commit -m
