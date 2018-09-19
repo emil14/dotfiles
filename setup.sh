@@ -51,9 +51,9 @@ mkdir -p build && cd build/
 make && sudo make install
 
 # i3lock-fancy
-git clone https://github.com/meskarune/i3lock-fancy
-sudo cp -r i3lock-fancy/{lock,icons} /usr/local/bin
-rm -rf i3lock-fancy
+git clone https://github.com/meskarune/i3lock-fancy && cd i3lock-fancy
+sudo make install
+cd ../ && rm -rf i3lock-fancy
 
 # Polybar
 wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -

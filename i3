@@ -75,16 +75,14 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id compton
-
 # Colors
-# class                 border  bground text    indicator child_border
-client.focused          #61AFEF #3B84C0 #FFFFFF #3B84C0   #61AFEF
-client.focused_inactive #ABB2BF #282C34 #ABB2BF #484E50   #5F676A
-client.unfocused        #828997 #282C34 #828997 #292D2E   #222222
-client.urgent           #E06C75 #BE5046 #FFFFFF #900000   #900000
-client.placeholder      #000000 #5C6370 #ABB2BF #000000   #0C0C0C
+# { 0: border, 1: background, 2: text, 3: indicator, 4: child_border }
+# class                 0       1       2       3       4
+client.focused          #61AFEF #3B84C0 #FFFFFF #3B84C0 #61AFEF
+client.focused_inactive #ABB2BF #282C34 #ABB2BF #484E50 #5F676A
+client.unfocused        #828997 #282C34 #828997 #292D2E #222222
+client.urgent           #E06C75 #BE5046 #FFFFFF #900000 #900000
+client.placeholder      #000000 #5C6370 #ABB2BF #000000 #0C0C0C
 client.background       #5C6370
 
 # Switch language
@@ -95,9 +93,7 @@ exec --no-startup-id "nm-applet --sm-disable"
 bindsym $mod+Escape exec "lock --pixelate"
 
 # Borders
-for_window [class="^.*"] border pixel 2
-hide_edge_borders smart
-smart_borders on
+default_border none
 
 # Move workspases between monitors
 bindsym $mod+Shift+greater move workspace to output right
@@ -112,10 +108,14 @@ bindsym --whole-window $mod+button5 workspace next_on_output
 
 # Gaps
 gaps inner 10
-gaps outer 20
 
-focus_on_window_activation smart
+# focus_on_window_activation smart
 
 # Wallpapers
 exec_always ~/.bin/wallpapers.sh
 
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Compton
+exec --no-startup-id compton
