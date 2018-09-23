@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Basic packages
+# "Core" packages
 #
 
 # APT packages
@@ -18,14 +18,13 @@ sudo apt install -y -qq \
   comption \
   ranger \
   xfonts-terminus \
-  font-awesome
+  fonts-font-awesome
 
 # Snapcraft packages
 sudo snap refresh
 sudo snap install \
   chromium \
   telegram-desktop \
-  tldr
 
 # Node Version Manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
@@ -52,9 +51,9 @@ mkdir -p build && cd build/
 make && sudo make install
 
 # i3lock-fancy
-git clone https://github.com/meskarune/i3lock-fancy
-sudo cp -r i3lock-fancy/{lock,icons} /usr/local/bin
-rm -rf i3lock-fancy
+git clone https://github.com/meskarune/i3lock-fancy && cd i3lock-fancy
+sudo make install
+cd ../ && rm -rf i3lock-fancy
 
 # Polybar
 wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
@@ -62,7 +61,9 @@ sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /et
 sudo apt update
 sudo apt install polybar
 
-### Shell things ###
+#
+# Shell stuff
+#
 
 # Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -92,9 +93,19 @@ curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
 unzip latest.zip && rm latest.zip
 mv terminus-ttf-4.46.0 ~/.fonts
 
+# Hermit font
+curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
+tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
+
+# Termite terminal emulator
+source <(curl -s https://raw.githubusercontent.com/Corwind/termite-install/master/termite-install.sh)
+
 #
 # Configurations
 #
 
 # Switch shell to ZSH
 chsh -s /usr/bin/zsh
+
+# Set Chromium as a default browser
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200

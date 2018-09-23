@@ -4,12 +4,15 @@
 [push]
   default = simple
 [alias]
+  adda = add -A
   br = branch
   ci = commit
   cim = commit -m
   cia = commit --amend
+  cian = commit --amend --no-edit
   cl = clone
   co = checkout
+  cob = checkout -b
   cp = cherry-pick
   df = diff
   dfc = diff --cached
@@ -18,9 +21,10 @@
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)'
   pl = pull
   ps = push
+  psf = push -f
   st = status -sb
   rb = rebase
-  # sq = rebase -i HEAD~
+  rbi = rebase -i origin/master
 [core]
   editor = code --wait
   pager = diff-so-fancy | less --tabs=4 -RFX
