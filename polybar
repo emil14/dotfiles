@@ -45,12 +45,14 @@ tray-padding = 2
 ;tray-background = #b2000000
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
