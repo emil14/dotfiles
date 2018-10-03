@@ -20,6 +20,12 @@ source $ZSH/oh-my-zsh.sh
 
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias chromium='chromium --disable-sync-preferences'
+alias cp='cp -r'
+alias scp='scp -r'
+alias rm='rm -r'
+alias mkdir='mkdir -p'
+alias ls='ls --all --classify --file-type --color=auto'
+alias ll='ls -l --human-readable'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
