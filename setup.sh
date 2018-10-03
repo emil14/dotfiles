@@ -25,6 +25,7 @@ sudo snap refresh
 sudo snap install \
   chromium \
   telegram-desktop \
+  vscode \
 
 # Node Version Manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
@@ -81,12 +82,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 #
 # Other
 #
-
-# Visual Studio Code
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-sudo apt install code
 
 # TerminusTTF font
 curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
