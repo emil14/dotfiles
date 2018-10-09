@@ -10,6 +10,7 @@
   cim = commit -m
   cia = commit --amend
   cian = commit --amend --no-edit
+  ciam = commit --amend -m
   cl = clone
   co = checkout
   cob = checkout -b
