@@ -3,20 +3,11 @@
 # Apt packages
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y -qq \
-  snap \
-  zsh \
-  git \
-  vim \
-  curl \
-  xfonts-terminus
+sudo apt install -y -qq snap zsh git vim curl terminator
 
 # Snap packages
 sudo snap refresh
-sudo snap install \
-  chromium \
-  telegram-desktop \
-  vscode
+sudo snap install chromium telegram-desktop vscode --classic
 
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
@@ -37,17 +28,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-# TerminusTTF font
-curl -O https://files.ax86.net/terminus-ttf/files/latest.zip
-unzip latest.zip && rm latest.zip
-mv terminus-ttf-4.46.0 ~/.fonts
-
-# Hermit font
-curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
-tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
+# nerd-fonts
+git clone https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+./install
 
 # Switch shell to ZSH
-chsh -s /usr/bin/zsh
+# chsh -s /usr/bin/zsh
 
 # Set Chromium as a default browser
-sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
+# sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
+
+
