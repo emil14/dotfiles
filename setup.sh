@@ -10,10 +10,10 @@ sudo snap refresh
 sudo snap install chromium telegram-desktop vscode --classic
 
 # NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-# NPM packages
-npm i -g diff-so-fancy
+# Diff so fancy
+curl https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy --create-dirs -o ~/.bin/diff-so-fancy
 
 # Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -32,6 +32,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 ./install
+
 
 # Switch shell to ZSH
 # chsh -s /usr/bin/zsh
