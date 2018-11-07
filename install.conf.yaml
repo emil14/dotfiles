@@ -11,14 +11,6 @@
     ~/.zshrc: zshrc
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
-    ~/.i3/config: i3
-    ~/.config/rofi/config.rasi: rofi.rasi
-    ~/.config/ranger/rc.conf: ranger
-    ~/.config/polybar/config: polybar
-    ~/.config/polybar/launch.sh: polybar.sh
-    ~/.bin/wallpapers.sh: wallpapers.sh
-    ~/.config/compton.conf: compton.conf
-    ~/.config/chromium-flags.conf: chromium-flags.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

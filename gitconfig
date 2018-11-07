@@ -23,6 +23,7 @@
   pl = pull
   ps = push
   psf = push -f
+  psu = push -u origin HEAD
   st = status -sb
   rb = rebase
   rbi = rebase -i origin/master
