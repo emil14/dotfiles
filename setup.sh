@@ -7,7 +7,7 @@ sudo apt install -y -qq snap zsh git vim curl terminator
 
 # Snap packages
 sudo snap refresh
-sudo snap install chromium telegram-desktop vscode --classic
+sudo snap install chromium telegram-desktop vscode go --classic
 
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
