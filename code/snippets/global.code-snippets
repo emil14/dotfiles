@@ -1,0 +1,48 @@
+{
+  "Print to console": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "lg",
+    "body": ["console.log($1)"],
+    "description": "Log output to console"
+  },
+  "Add breakpoint": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "db",
+    "body": ["debugger // eslint-disable-line"],
+    "description": "Debugger shortcut"
+  },
+  "ESLint disable": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "ed",
+    "body": [
+      "/* eslint-disable ${1:rule} */",
+      "\t$0",
+      "/* eslint-enable ${1} */"
+    ],
+    "description": "ESLint disable wrapper"
+  },
+  "ESLint enable": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "ee",
+    "body": ["/* eslint-enable */"],
+    "description": "ESLint disable wrapper"
+  },
+  "ESLint disable line": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "edl",
+    "body": ["// eslint-disable-line ${1:rule}"],
+    "description": "ESLint disable-line wrapper"
+  },
+  "ESLint disable next line": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "ednl",
+    "body": ["// eslint-disable-next-line ${1:rule}"],
+    "description": "ESLint disable-line wrapper"
+  },
+  "Try/Catch/Finally": {
+    "scope": "javascript,javascriptreact,typescript",
+    "prefix": "tcf",
+    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}",
+    "description": "try/catch/finally"
+  },
+}
