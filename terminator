@@ -1,5 +1,6 @@
 [global_config]
   focus = mouse
+  inactive_color_offset = 0.5
   sticky = True
   title_font = Terminus 9
   title_hide_sizetext = True
