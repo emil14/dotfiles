@@ -32,12 +32,3 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 ./install
-
-
-# Switch shell to ZSH
-# chsh -s /usr/bin/zsh
-
-# Set Chromium as a default browser
-# sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /snap/bin/chromium 200
-
-
