@@ -1,6 +1,6 @@
 # Dotfiles
 
-> Linux configuration files
+> Linux (Ubuntu 18+) configuration files
 
 ## Install
 
