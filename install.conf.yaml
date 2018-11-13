@@ -13,6 +13,7 @@
     ~/.gitconfig: gitconfig
     ~/.config/terminator/config: terminator
     ~/.config/Code/User: code
+    ~/.config/gtk-3.0/gtk.css: gtk.css
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
