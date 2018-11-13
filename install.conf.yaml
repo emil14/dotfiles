@@ -12,6 +12,7 @@
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.config/terminator/config: terminator
+    ~/.config/Code/User: code
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -3,6 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=7
 export EDITOR=vim
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export GOPATH=$HOME/projects/go
 
 ZSH_THEME="bira"
 ENABLE_CORRECTION="true"
