@@ -61,5 +61,9 @@
     "workbench.sideBar.location": "left",
     "editor.renderControlCharacters": false,
     "terminal.integrated.rendererType": "canvas",
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.titleBarStyle": "custom",
+    "breadcrumbs.enabled": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorWidth": 2
 }
