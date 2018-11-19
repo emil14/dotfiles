@@ -30,5 +30,4 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # nerd-fonts
 git clone https://github.com/ryanoasis/nerd-fonts
-cd nerd-fonts
-./install
+./nerd-fonts/install.sh && rm -rf nerd-fonts
