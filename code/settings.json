@@ -2,7 +2,6 @@
     "diffEditor.renderSideBySide": false,
     "editor.autoIndent": true,
     "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
-    "editor.minimap.enabled": true,
     "editor.quickSuggestions": {
         "comments": true,
         "other": true,
@@ -11,7 +10,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [120],
     "editor.snippetSuggestions": "top",
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "eslint.autoFixOnSave": true,
@@ -59,11 +58,15 @@
       "compounds": []
     },
     "workbench.sideBar.location": "left",
-    "editor.renderControlCharacters": false,
+    "editor.renderControlCharacters": true,
     "terminal.integrated.rendererType": "canvas",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "window.titleBarStyle": "custom",
     "breadcrumbs.enabled": true,
     "editor.cursorBlinking": "smooth",
-    "editor.cursorWidth": 2
+    "editor.cursorWidth": 2,
+    "window.zoomLevel": 0,
+    "editor.minimap.renderCharacters": false,
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "vscode-icons",
 }
