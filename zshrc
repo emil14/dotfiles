@@ -27,6 +27,7 @@ alias rm='rm -r'
 alias mkdir='mkdir -p'
 alias ls='ls --all --classify --file-type --color=auto'
 alias ll='ls -l --human-readable'
+alias py='ptpython'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
