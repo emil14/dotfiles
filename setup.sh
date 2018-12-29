@@ -31,3 +31,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # nerd-fonts
 git clone https://github.com/ryanoasis/nerd-fonts
 ./nerd-fonts/install.sh && rm -rf nerd-fonts
+
+# Hermit font
+curl https://pcaro.es/d/otf-hermit-1.21.tar.gz --output ~/.fonts/hermit.tar.gz
+tar -xzf ~/.fonts/hermit.tar.gz && rm ~/.fonts/hermit.tar.gz
