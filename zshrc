@@ -5,6 +5,7 @@ export EDITOR="vim"
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export NVM_DIR="$HOME/.nvm"
 export GOPATH="$HOME/projects/go"
+export PIP_REQUIRE_VIRTUALENV="true"
 
 ZSH_THEME="bira"
 ENABLE_CORRECTION="true"
@@ -23,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
 
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
