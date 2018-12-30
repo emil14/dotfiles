@@ -1,5 +1,4 @@
 {
-    "diffEditor.renderSideBySide": false,
     "editor.autoIndent": true,
     "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
     "editor.quickSuggestions": {
@@ -19,7 +18,6 @@
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "git.enabled": false,
     "search.exclude": {
         "**/.git": true,
         "**/bower_components": true,
@@ -69,4 +67,5 @@
     "editor.minimap.renderCharacters": false,
     "editor.fontLigatures": true,
     "workbench.iconTheme": "vscode-icons",
+    "diffEditor.renderIndicators": false,
 }
