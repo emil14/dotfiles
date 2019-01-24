@@ -3,7 +3,7 @@
 # Apt packages
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y -qq snap zsh git vim curl terminator
+sudo apt install -y -qq snap zsh git vim curl terminator postgresql-10
 
 # Snap packages
 sudo snap refresh
