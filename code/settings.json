@@ -1,7 +1,8 @@
 {
     "diffEditor.renderSideBySide": false,
     "editor.autoIndent": true,
-    "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Terminus (TTF)', monospace, 'Droid Sans Fallback'",
+    "editor.minimap.enabled": true,
     "editor.quickSuggestions": {
         "comments": true,
         "other": true,
@@ -69,4 +70,8 @@
     "editor.minimap.renderCharacters": false,
     "editor.fontLigatures": true,
     "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 16,
+    "[python]": {
+      "editor.tabSize": 4,
+    }
 }
