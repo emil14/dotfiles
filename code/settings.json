@@ -1,5 +1,4 @@
 {
-    "diffEditor.renderSideBySide": false,
     "editor.autoIndent": true,
     "editor.fontFamily": "'Terminus (TTF)', monospace, 'Droid Sans Fallback'",
     "editor.minimap.enabled": true,
@@ -20,7 +19,6 @@
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "git.enabled": false,
     "search.exclude": {
         "**/.git": true,
         "**/bower_components": true,
@@ -70,8 +68,5 @@
     "editor.minimap.renderCharacters": false,
     "editor.fontLigatures": true,
     "workbench.iconTheme": "vscode-icons",
-    "editor.fontSize": 16,
-    "[python]": {
-      "editor.tabSize": 4,
-    }
+    "diffEditor.renderIndicators": false,
 }
