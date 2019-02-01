@@ -1,6 +1,6 @@
 {
     "editor.autoIndent": true,
-    "editor.fontFamily": "'Terminus (TTF)', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
     "editor.minimap.enabled": true,
     "editor.quickSuggestions": {
         "comments": true,
@@ -8,7 +8,9 @@
         "strings": true
     },
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [120],
+    "editor.rulers": [
+        120
+    ],
     "editor.snippetSuggestions": "top",
     "editor.tabCompletion": "on",
     "editor.tabSize": 2,
@@ -53,8 +55,8 @@
     "debug.inlineValues": true,
     "debug.toolBarLocation": "docked",
     "launch": {
-      "configurations": [],
-      "compounds": []
+        "configurations": [],
+        "compounds": []
     },
     "workbench.sideBar.location": "left",
     "editor.renderControlCharacters": true,
