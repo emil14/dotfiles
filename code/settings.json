@@ -1,6 +1,7 @@
 {
     "editor.autoIndent": true,
-    "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Terminus (TTF)', monospace, 'Droid Sans Fallback'",
+    "editor.minimap.enabled": true,
     "editor.quickSuggestions": {
         "comments": true,
         "other": true,

@@ -1,4 +1,4 @@
-export PATH="$HOME/.bin:$HOME/.pyenv/bin:/usr/local/bin:/sbin:/usr/sbin:/snap/bin:$PATH"
+export PATH="$HOME/.bin:/usr/local/bin:/sbin:/usr/sbin:/snap/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS="7"
 export EDITOR="vim"
@@ -21,11 +21,14 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
+<<<<<<< HEAD
+=======
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 
+>>>>>>> ac0f248ea7b4b213629abbe1f3727c1de290d429
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
@@ -43,4 +46,5 @@ alias mkdir='mkdir -p'
 alias ls='ls --all --classify --file-type --color=auto'
 alias ll='ls -l --human-readable'
 alias py='ptpython'
+alias pe='pipenv'
 
