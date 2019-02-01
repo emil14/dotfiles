@@ -66,6 +66,7 @@
     "window.zoomLevel": 0,
     "editor.minimap.renderCharacters": false,
     "editor.fontLigatures": true,
-    "workbench.iconTheme": "vscode-icons",
     "diffEditor.renderIndicators": false,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "editor.formatOnSave": true,
 }

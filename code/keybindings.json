@@ -31,6 +31,12 @@
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
+    // Run Selected Python
+    {
+        "key": "shift+space",
+        "command": "python.execSelectionInTerminal",
+        "when": "editorFocus && !findInputFocussed && !python.datascience.hascodecells &&  !replaceInputFocussed && editorLangId == 'python'"
+    },
     // Jumpy Extension
     {
         "key": "shift+enter",
