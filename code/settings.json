@@ -1,7 +1,7 @@
 {
     "editor.autoIndent": true,
     "editor.fontFamily": "'Hermit', monospace, 'Droid Sans Fallback'",
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.quickSuggestions": {
         "comments": true,
         "other": true,
@@ -70,6 +70,12 @@
     "editor.minimap.renderCharacters": false,
     "editor.fontLigatures": true,
     "diffEditor.renderIndicators": false,
-    "javascript.implicitProjectConfig.checkJs": true,
     "editor.formatOnSave": true,
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.analysis.logLevel": "Warning",
 }
