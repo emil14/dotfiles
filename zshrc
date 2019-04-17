@@ -40,8 +40,4 @@ alias ll='ls -l --human-readable'
 alias py='ptpython'
 alias pe='pipenv'
 alias https='http --default-scheme=https'
-alias code='vscode'
 
-export PATH="/home/emil14/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
