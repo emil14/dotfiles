@@ -10,15 +10,9 @@
   cim = commit -m
   cia = commit --amend
   cian = commit --amend --no-edit
-  ciam = commit --amend -m
   cl = clone
   co = checkout
-  cob = checkout -b
-  cp = cherry-pick
   df = diff
-  dfc = diff --cached
-  ft = fetch
-  mg = merge
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)'
   pl = pull
   ps = push
@@ -26,18 +20,11 @@
   psu = push -u origin HEAD
   st = status -sb
   rb = rebase
-  rbi = rebase -i origin/master
 [core]
   editor = code --wait
   pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
-  tool = vscode
-[mergetool "vscode"]
-  cmd = code --wait $MERGED
-[diff]
-  tool = default-difftool
-[difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  tool = vim
 [color]
   ui = true
 [color "diff-highlight"]
@@ -53,4 +40,4 @@
   new = green bold
   whitespace = red reverse
 [diff-so-fancy]
-	stripLeadingSymbols = false
+  stripLeadingSymbols = false
