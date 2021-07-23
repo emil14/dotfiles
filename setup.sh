@@ -3,7 +3,7 @@
 # Apt packages
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y -qq zsh git vim curl gdebi
+sudo apt install -y -qq zsh git vim curl
 
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
