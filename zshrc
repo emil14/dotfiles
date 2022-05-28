@@ -1,33 +1,38 @@
-export PATH="$HOME/.bin:/usr/local/bin:/sbin:/usr/sbin:/snap/bin:$PATH"
+# ZSH
+export PATH="/usr/local/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
-export UPDATE_ZSH_DAYS="7"
-export EDITOR="vim"
-export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
-export NVM_DIR="$HOME/.nvm"
+export UPDATE_ZSH_DAYS="14"
 
 ZSH_THEME="bira"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-DISABLE_UPDATE_PROMPT="true"
 
-# zsh
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
 source $ZSH/oh-my-zsh.sh
 
-# nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# ALIASES
+alias lighton="echo 3 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness"
+alias lightoff="echo 0 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness"
+alias k="kubectl"
+alias code="GTK_IM_MODULE=ibus code"
+alias whosonport="sudo lsof -i -P | grep"
 
-# fzf
-[ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
+# GOLANG
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$GOROOT/bin:$PATH
 
-# aliases
-alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
-alias mkdir='mkdir -p'
-alias ls='ls --all --classify --file-type --color=auto'
-alias ll='ls -l --human-readable'
-alias https='http --default-scheme=https'
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # loads nvm bash_completion
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
