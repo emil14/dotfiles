@@ -1,0 +1,22 @@
+{
+  "Print Line": {
+    "prefix": ".ln",
+    "body": ["fmt.Println($1)"]
+  },
+  "Errorf": {
+    "prefix": ".errf",
+    "body": ["fmt.Errorf(\"%w: $1\", err)"]
+  },
+  "Err Not Nil": {
+    "prefix": ".enn",
+    "body": ["if err := $1; err != nil {", "\t$2", "}"]
+  },
+  "Method": {
+    "prefix": ".meth",
+    "body": ["func ($1 $2) $3() {", "\t", "}"]
+  },
+  "Function": {
+    "prefix": ".fn",
+    "body": ["func $1($2 $3) $4 {", "\t", "}"]
+  }
+}
